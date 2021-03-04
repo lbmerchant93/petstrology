@@ -1,6 +1,6 @@
 .App {
   color: white;
-  background-image: url('../images/All-Signs-Background.jpeg');
+  background-image: url('../../images/All-Signs-Background.jpeg');
   /* background-position: center; */
   background-size: 100% 100%;
   background-color: rgba(0,0,0, 0.8);

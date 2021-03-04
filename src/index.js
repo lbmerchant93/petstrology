@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
 import './index.css';
-import App from './Components/App';
+import App from './Components/App/App';
 import reportWebVitals from './reportWebVitals';
 
 const router = <BrowserRouter><App /></BrowserRouter>
