@@ -1,0 +1,25 @@
+.App {
+  color: white;
+  background-image: url('../images/All-Signs-Background.jpeg');
+  /* background-position: center; */
+  background-size: 100% 100%;
+  background-color: rgba(0,0,0, 0.8);
+  background-blend-mode: darken;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  min-height: 10vh;
+  width: 100vw;
+}
+
+main{
+  min-height: 80vh;
+  width: 100vw;
+}
+
+footer {
+  min-height: 10vh;
+  width: 100vw;
+}
