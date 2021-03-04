@@ -1,0 +1,29 @@
+
+
+.App {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  margin: 10px;
+  min-height: 10vh;
+  max-width: 100vw;
+}
+
+main{
+  margin: 10px;
+  min-height: 80vh;
+  max-width: 100vw;
+}
+
+footer {
+  margin: 10px;
+  min-height: 10vh;
+  max-width: 100vw;
+}
+
+a {
+  text-decoration: none;
+}
