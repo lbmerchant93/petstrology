@@ -17,40 +17,40 @@ const Home = () => {
     return (
         <main className='all-star-signs-main'>
             <article className='all-star-signs'>Capricorn
-            <img src={capricorn} className="sign-img" />
+            <img src={capricorn} className='sign-img' alt='Capricorn'/>
             </article>
             <article className='all-star-signs'>Aquarius
-            <img src={aquarius} className="sign-img" />
+            <img src={aquarius} className='sign-img' alt='Aquarius'/>
             </article>
             <article className='all-star-signs'>Pisces
-            <img src={pisces} className="sign-img" />
+            <img src={pisces} className='sign-img' alt='Pisces'/>
             </article>
             <article className='all-star-signs'>Aries
-            <img src={aries} className="sign-img" />
+            <img src={aries} className='sign-img' alt='Aries'/>
             </article>
             <article className='all-star-signs'>Taurus
-            <img src={taurus} className="sign-img" />
+            <img src={taurus} className='sign-img' alt='Taurus'/>
             </article>
             <article className='all-star-signs'>Gemini
-            <img src={gemini} className="sign-img" />
+            <img src={gemini} className='sign-img' alt='Gemini'/>
             </article>
             <article className='all-star-signs'>Cancer
-            <img src={cancer} className="sign-img" />
+            <img src={cancer} className='sign-img' alt='Cancer'/>
             </article>
             <article className='all-star-signs'>Leo
-            <img src={leo} className="sign-img" />
+            <img src={leo} className='sign-img' alt='Leo'/>
             </article>
             <article className='all-star-signs'>Virgo
-            <img src={virgo} className="sign-img" />
+            <img src={virgo} className='sign-img' alt='Virgo'/>
             </article>
             <article className='all-star-signs'>Libra
-            <img src={libra} className="sign-img" />
+            <img src={libra} className='sign-img' alt='Libra'/>
             </article>
             <article className='all-star-signs'>Scorpio
-            <img src={scorpio} className="sign-img" />
+            <img src={scorpio} className='sign-img' alt='Scorpio'/>
             </article>
             <article className='all-star-signs'>Sagittarius
-            <img src={sagittarius} className="sign-img" />
+            <img src={sagittarius} className='sign-img' alt='Sagittarius'/>
             </article>
         </main>
     )
