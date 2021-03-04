@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-title {
+    background-image: linear-gradient( rgb(228, 12, 12), rgb(12, 170, 110) ,rgb(64, 26, 236));
+    background-clip: text;
+    color: transparent;
+    font-size: xxx-large;
+    margin: 0;
+}
+
+.saved-signs-btn {
+    border: none; 
+    background: none;
+    color: white;
+}
+
+.saved-signs-btn:hover {
+    cursor: pointer;
+}

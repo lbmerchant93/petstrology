@@ -1,8 +1,12 @@
 import React from 'react';
+import './Header.css';
 
 const Header = () => {
     return (
-        <header>This is the Header Component</header>
+        <header>
+            <h1 className="site-title" >Petstrology</h1>
+            <button className="saved-signs-btn">My Saved Signs</button>
+        </header>
     )
 }
 
