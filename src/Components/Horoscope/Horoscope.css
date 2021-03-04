@@ -1,0 +1,9 @@
+.horoscope-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.title-img,
+.details {
+    width: 50%;
+}
