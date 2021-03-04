@@ -19,7 +19,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/' render={() => <div>404</div>} />
+          <Route path='/' render={() => <main>404</main>} />
         </Switch>
         <Footer />
       </div>
