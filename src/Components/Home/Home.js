@@ -16,41 +16,53 @@ import sagittarius from'../../images/sagittarius.png';
 const Home = () => {
     return (
         <main className='all-star-signs-main'>
-            <article className='all-star-signs'>Capricorn
-            <img src={capricorn} className='sign-img' alt='Capricorn'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>CAPRICORN</h2>
+                <img src={capricorn} className='sign-img' alt='Capricorn'/>
             </article>
-            <article className='all-star-signs'>Aquarius
-            <img src={aquarius} className='sign-img' alt='Aquarius'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>AQUARIUS</h2>
+                <img src={aquarius} className='sign-img' alt='Aquarius'/>
             </article>
-            <article className='all-star-signs'>Pisces
-            <img src={pisces} className='sign-img' alt='Pisces'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>PISCES</h2>
+                <img src={pisces} className='sign-img' alt='Pisces'/>
             </article>
-            <article className='all-star-signs'>Aries
-            <img src={aries} className='sign-img' alt='Aries'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>ARIES</h2>
+                <img src={aries} className='sign-img' alt='Aries'/>
             </article>
-            <article className='all-star-signs'>Taurus
-            <img src={taurus} className='sign-img' alt='Taurus'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>TAURUS</h2>
+                <img src={taurus} className='sign-img' alt='Taurus'/>
             </article>
-            <article className='all-star-signs'>Gemini
-            <img src={gemini} className='sign-img' alt='Gemini'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>GEMINI</h2>
+                <img src={gemini} className='sign-img' alt='Gemini'/>
             </article>
-            <article className='all-star-signs'>Cancer
-            <img src={cancer} className='sign-img' alt='Cancer'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>CANCER</h2>
+                <img src={cancer} className='sign-img' alt='Cancer'/>
             </article>
-            <article className='all-star-signs'>Leo
-            <img src={leo} className='sign-img' alt='Leo'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>LEO</h2>
+                <img src={leo} className='sign-img' alt='Leo'/>
             </article>
-            <article className='all-star-signs'>Virgo
-            <img src={virgo} className='sign-img' alt='Virgo'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>VIRGO</h2>
+                <img src={virgo} className='sign-img' alt='Virgo'/>
             </article>
-            <article className='all-star-signs'>Libra
-            <img src={libra} className='sign-img' alt='Libra'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>LIBRA</h2>
+                <img src={libra} className='sign-img' alt='Libra'/>
             </article>
-            <article className='all-star-signs'>Scorpio
-            <img src={scorpio} className='sign-img' alt='Scorpio'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>SCORPIO</h2>
+                <img src={scorpio} className='sign-img' alt='Scorpio'/>
             </article>
-            <article className='all-star-signs'>Sagittarius
-            <img src={sagittarius} className='sign-img' alt='Sagittarius'/>
+            <article className='all-star-signs'>
+                <h2 className='sign-title'>SAGITTARIUS</h2>
+                <img src={sagittarius} className='sign-img' alt='Sagittarius'/>
             </article>
         </main>
     )
