@@ -1,0 +1,16 @@
+.all-star-signs-main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.all-star-signs {
+    border: solid 1px white;
+    border-radius: 10px;
+    min-height: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    max-width: 200px;
+}
