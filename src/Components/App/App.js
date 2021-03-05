@@ -53,7 +53,7 @@ class App extends Component {
     } else if (when === 'today') {
         url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`
     }
-    this.retrieveHoroscopeData(url)
+    this.retrieveHoroscopeData(url, this.state.image, this.state.sign)
     this.setState({ day: when })
   }
 
@@ -77,7 +77,7 @@ class App extends Component {
         <Header goingToPage={this.goingToPage}/>
         <Switch>
           <Route path='/' exact render={() => <Home retrieveHoroscopeData={this.retrieveHoroscopeData} />} />
-          <Route path='/Horoscope/:sign' exact render={() => <Horoscope horoscope={this.state}/>} />
+          <Route path='/Horoscope/:sign' exact render={() => <Horoscope horoscope={this.state} retrieveDifferentDay={this.retrieveDifferentDay}/>} />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>
         <Footer />
