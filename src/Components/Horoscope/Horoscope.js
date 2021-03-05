@@ -1,13 +1,14 @@
 import React from 'react';
 import './Horoscope.css';
-import aquarius from'../../images/aquarius.png';
 
-const Horoscope = () => {
+const Horoscope = (props) => {
+    const { src, alt, signTitle } = props.location.state;
+    
     return (
        <main className="horoscope-main">
-            <img className='horoscope-sign-img' src={aquarius} alt='aquarius' />
+            <img className='horoscope-sign-img' src={src} alt={alt} />
             <div className='details'>
-                <h2 className='horoscope-sign-title'>Sign Title</h2>
+                <h2 className='horoscope-sign-title'>{signTitle}</h2>
                 <ul>
                     <li className='days-date'>Current Date:</li>
                     <li className='days-color'>Color:</li>

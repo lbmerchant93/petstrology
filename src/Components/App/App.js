@@ -20,7 +20,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/horoscope/:sign' exact component={Horoscope} />
+          <Route path='/Horoscope/:sign/Today' exact component={Horoscope} />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>
         <Footer />
