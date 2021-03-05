@@ -6,20 +6,26 @@ class Horoscope extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            color: '',
-            currentDate: '',
-            compatibility: '',
-            description: '',
-            luckyNumber: '',
-            luckyTime: '',
-            mood: ''
+            isLoading: true,
+            errorMsg: '',
+            horoscope: {}
         }
     }
 
     componentDidMount() {
         fetchHoroscope('https://aztro.sameerkumar.website/?sign=aries&day=today')
         .then(result => {
-            console.log(result)
+            if (typeof result === 'string') {
+                this.setState({
+                  isLoading: false,
+                  errorMsg: result
+                })
+              } else {
+                this.setState({
+                    horoscope: result,
+                    isLoading: false
+                  })
+              }
         })
     }
 
