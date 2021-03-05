@@ -13,14 +13,14 @@ class App extends Component {
     this.state = {
       isLoading: true,
       errorMsg: '',
-      day: 'today',
+      day: '',
       sign: '',
       horoscope: '',
       image: ''
     }
   }
 
-  retrieveHoroscopeData = async (url, src, alt) => {
+  retrieveHoroscopeData = async (url, src, alt, when) => {
     await fetchHoroscope(url)
     .then(result => {
         this.setState({ isLoading: true, horoscope: '' })
@@ -30,10 +30,11 @@ class App extends Component {
                     isLoading: false,
                     errorMsg: result
                 })
-            }, 1000)
+            }, 600)
           } else {
             setTimeout(() => {
                 this.setState({
+                    day: when || 'today',
                     image: src,
                     sign: alt, 
                     horoscope: result,
@@ -45,16 +46,8 @@ class App extends Component {
   }
 
   retrieveDifferentDay = (when) => {
-    let url;
-    if (when === 'yesterday') {
-        url= `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=yesterday`
-    } else if (when === 'tomorrow') {
-        url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=tomorrow`
-    } else if (when === 'today') {
-        url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`
-    }
-    this.retrieveHoroscopeData(url, this.state.image, this.state.sign)
-    this.setState({ day: when })
+    let url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=${when}`;
+    this.retrieveHoroscopeData(url, this.state.image, this.state.sign, when)
   }
 
   goingToPage = (page) => {
