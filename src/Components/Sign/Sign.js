@@ -9,7 +9,7 @@ const Sign = (props) => {
     return (
         <Link 
             to={{
-                pathname: `/Horoscope/${alt}/Today`,
+                pathname: `/Horoscope/${alt}`,
                 state: {src, alt, signTitle}
             }} 
             className='sign-link'

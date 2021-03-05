@@ -21,16 +21,21 @@ class Horoscope extends Component {
     retrieveHoroscopeData = async (url) => {
         await fetchHoroscope(url)
         .then(result => {
+            this.setState({ isLoading: true, horoscope: '' })
             if (typeof result === 'string') {
-                this.setState({
-                  isLoading: false,
-                  errorMsg: result
-                })
+                setTimeout(() => {
+                    this.setState({
+                        isLoading: false,
+                        errorMsg: result
+                    })
+                }, 1000)
               } else {
-                this.setState({
-                    horoscope: result,
-                    isLoading: false
-                  })
+                setTimeout(() => {
+                    this.setState({
+                        horoscope: result,
+                        isLoading: false
+                    })
+                }, 1000)   
               }
         })
     }

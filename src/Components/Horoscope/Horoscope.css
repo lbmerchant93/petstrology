@@ -20,3 +20,9 @@
 .horoscope-sign-title {
     color: rgb(148,84,110);
 }
+
+.yesterday,
+.today,
+.tomorrow {
+    width: 50%;
+}
