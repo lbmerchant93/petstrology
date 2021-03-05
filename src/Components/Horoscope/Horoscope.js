@@ -1,6 +1,5 @@
 import React from 'react';
 import './Horoscope.css';
-// import { fetchHoroscope } from '../../apiCalls';
 
 const Horoscope = (props) => {
     const { day, isLoading, errorMsg, horoscope, image, alt, signTitle } = props.horoscope;

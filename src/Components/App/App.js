@@ -57,11 +57,24 @@ class App extends Component {
     this.setState({ day: when })
   }
 
+  goingToPage = (page) => {
+    if(page === 'home') {
+      this.setState({
+        isLoading: true,
+        errorMsg: '',
+        day: 'today',
+        sign: '',
+        horoscope: '',
+        image: ''
+      })
+    }
+  }
+
   render() {
 
     return (
       <div className="App">
-        <Header />
+        <Header goingToPage={this.goingToPage}/>
         <Switch>
           <Route path='/' exact render={() => <Home retrieveHoroscopeData={this.retrieveHoroscopeData} />} />
           <Route path='/Horoscope/:sign' exact render={() => <Horoscope horoscope={this.state}/>} />
