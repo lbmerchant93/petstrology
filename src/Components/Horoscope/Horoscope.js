@@ -1,65 +1,64 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Horoscope.css';
-import { fetchHoroscope } from '../../apiCalls';
+// import { fetchHoroscope } from '../../apiCalls';
 
-class Horoscope extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            sign: this.props.location.state.alt,
-            day: 'today',
-            isLoading: true,
-            errorMsg: '',
-            horoscope: ''
-        }
-    }
+const Horoscope = (props) => {
 
-    componentDidMount() {
-        this.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`)
-    }
+        // this.state = {
+        //     sign: this.props.location.state.alt,
+        //     day: 'today',
+        //     isLoading: true,
+        //     errorMsg: '',
+        //     horoscope: ''
+        // }
+    // }
 
-    retrieveHoroscopeData = async (url) => {
-        await fetchHoroscope(url)
-        .then(result => {
-            this.setState({ isLoading: true, horoscope: '' })
-            if (typeof result === 'string') {
-                setTimeout(() => {
-                    this.setState({
-                        isLoading: false,
-                        errorMsg: result
-                    })
-                }, 1000)
-              } else {
-                setTimeout(() => {
-                    this.setState({
-                        horoscope: result,
-                        isLoading: false
-                    })
-                }, 1000)   
-              }
-        })
-    }
+    // componentDidMount() {
+    //     this.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`)
+    // }
 
-    retrieveDifferentDay = (when) => {
-        let url;
-        if (when === 'yesterday') {
-            url= `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=yesterday`
-        } else if (when === 'tomorrow') {
-            url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=tomorrow`
-        } else if (when === 'today') {
-            url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`
-        }
-        this.retrieveHoroscopeData(url)
-        this.setState({ day: when })
-    }
+    // retrieveHoroscopeData = async (url) => {
+    //     await fetchHoroscope(url)
+    //     .then(result => {
+    //         this.setState({ isLoading: true, horoscope: '' })
+    //         if (typeof result === 'string') {
+    //             setTimeout(() => {
+    //                 this.setState({
+    //                     isLoading: false,
+    //                     errorMsg: result
+    //                 })
+    //             }, 1000)
+    //           } else {
+    //             setTimeout(() => {
+    //                 this.setState({
+    //                     horoscope: result,
+    //                     isLoading: false
+    //                 })
+    //             }, 600)   
+    //           }
+    //     })
+    // }
 
-    render() {
-        const { src, alt, signTitle } = this.props.location.state;
-        const { day, isLoading, errorMsg, horoscope } = this.state;
+    // retrieveDifferentDay = (when) => {
+    //     let url;
+    //     if (when === 'yesterday') {
+    //         url= `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=yesterday`
+    //     } else if (when === 'tomorrow') {
+    //         url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=tomorrow`
+    //     } else if (when === 'today') {
+    //         url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`
+    //     }
+    //     this.retrieveHoroscopeData(url)
+    //     this.setState({ day: when })
+    // }
 
+
+        // const { src, alt, signTitle } = this.props.location.state;
+        // const { day, isLoading, errorMsg, horoscope, src, alt, signTitle } = this.props;
+        // console.log(props)
         return (
-            <main className="horoscope-main">
-                <img className='horoscope-sign-img' src={src} alt={alt} />
+            <main className="horoscope-main">merp
+                {/* <img className='horoscope-sign-img' src={src} alt={alt} />
                 <div className='details'>
                     <h2 className='horoscope-sign-title'>{signTitle}</h2>
                     {errorMsg && <p className='error-message'>{errorMsg}</p>}
@@ -81,10 +80,10 @@ class Horoscope extends Component {
                         {day !== 'tomorrow' && <button className='tomorrow' onClick={() => this.retrieveDifferentDay('tomorrow')}>Tomorrow</button>}
                     </section>
                     }     
-                </div>
+                </div> */}
             </main>
         )
     }
-}
+
 
 export default Horoscope; 

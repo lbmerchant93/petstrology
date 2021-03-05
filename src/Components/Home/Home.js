@@ -14,7 +14,7 @@ import libra from'../../images/libra.png';
 import scorpio from'../../images/scorpio.png';
 import sagittarius from'../../images/sagittarius.png';
 
-const Home = () => {
+const Home = (props) => {
     const images = [
         {src: capricorn, alt:'capricorn'},
         {src: aquarius, alt: 'aquarius'},
@@ -32,7 +32,7 @@ const Home = () => {
     
     const signComponents = images.map((image, index) => {
         return (
-            <Sign key={index} image={image}/>
+            <Sign key={index} image={image} retrieveHoroscopeData={props.retrieveHoroscopeData}/>
         )
     })
 
