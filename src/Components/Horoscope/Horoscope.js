@@ -7,6 +7,7 @@ class Horoscope extends Component {
         super(props)
         this.state = {
             sign: this.props.location.state.alt,
+            day: 'today',
             isLoading: true,
             errorMsg: '',
             horoscope: ''
@@ -14,7 +15,11 @@ class Horoscope extends Component {
     }
 
     componentDidMount() {
-        fetchHoroscope(`https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`)
+        this.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`)
+    }
+
+    retrieveHoroscopeData = async (url) => {
+        await fetchHoroscope(url)
         .then(result => {
             if (typeof result === 'string') {
                 this.setState({
@@ -30,9 +35,23 @@ class Horoscope extends Component {
         })
     }
 
+    retrieveDifferentDay = (when) => {
+        let url;
+        if (when === 'yesterday') {
+            url= `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=yesterday`
+        } else if (when === 'tomorrow') {
+            url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=tomorrow`
+        } else if (when === 'today') {
+            url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`
+        }
+        console.log(url)
+        this.retrieveHoroscopeData(url)
+        this.setState({ day: when })
+    }
+
     render() {
         const { src, alt, signTitle } = this.props.location.state;
-        const { isLoading, errorMsg, horoscope } = this.state;
+        const { day, isLoading, errorMsg, horoscope } = this.state;
 
         return (
             <main className="horoscope-main">
@@ -53,9 +72,9 @@ class Horoscope extends Component {
                             <li className='days-lucky-time'>Lucky Time: {horoscope.lucky_time}</li>
                             <li className='days-mood'>Mood: {horoscope.mood}</li>
                         </ul>
-                        <button className='yesterday'>Yesterday</button>
-                        <button className='today'>Today</button>
-                        <button className='tomorrow'>Tomorrow</button>
+                        {day !== 'yesterday' && <button className='yesterday' onClick={() => this.retrieveDifferentDay('yesterday')}>Yesterday</button>}
+                        {day !== 'today' && <button className='today'>Today</button>}
+                        {day !== 'tomorrow' && <button className='tomorrow'>Tomorrow</button>}
                     </section>
                     }     
                 </div>
