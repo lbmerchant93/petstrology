@@ -8,7 +8,7 @@ class Horoscope extends Component {
         this.state = {
             isLoading: true,
             errorMsg: '',
-            horoscope: {}
+            horoscope: ''
         }
     }
 
@@ -31,24 +31,33 @@ class Horoscope extends Component {
 
     render() {
         const { src, alt, signTitle } = this.props.location.state;
+        const { isLoading, errorMsg, horoscope } = this.state;
 
         return (
             <main className="horoscope-main">
+               
+                
                 <img className='horoscope-sign-img' src={src} alt={alt} />
                 <div className='details'>
                     <h2 className='horoscope-sign-title'>{signTitle}</h2>
-                    <ul>
-                        <li className='days-date'>Current Date:</li>
-                        <li className='days-color'>Color:</li>
-                        <li className='days-compatibility'>Compatibility:</li>
-                        <li className='days-description'>Description:</li>
-                        <li className='days-lucky-numbers'>Lucky Number:</li>
-                        <li className='days-lucky-time'>Lucky Time:</li>
-                        <li className='days-mood'>Mood:</li>
-                    </ul>
-                    <button className='yesterday'>Yesterday</button>
-                    <button className='today'>Today</button>
-                    <button className='tomorrow'>Tomorrow</button>
+                    {errorMsg && <p className='error-message'>{errorMsg}</p>}
+                    {isLoading && <p className='loading-message'>Loading...</p>}
+                    {horoscope  && 
+                    <section>
+                        <ul>
+                            <li className='days-date'>Current Date:</li>
+                            <li className='days-color'>Color:</li>
+                            <li className='days-compatibility'>Compatibility:</li>
+                            <li className='days-description'>Description:</li>
+                            <li className='days-lucky-numbers'>Lucky Number:</li>
+                            <li className='days-lucky-time'>Lucky Time:</li>
+                            <li className='days-mood'>Mood:</li>
+                        </ul>
+                        <button className='yesterday'>Yesterday</button>
+                        <button className='today'>Today</button>
+                        <button className='tomorrow'>Tomorrow</button>
+                    </section>
+                    }     
                 </div>
             </main>
         )
