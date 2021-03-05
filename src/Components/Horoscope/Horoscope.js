@@ -6,6 +6,7 @@ class Horoscope extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            sign: this.props.location.state.alt,
             isLoading: true,
             errorMsg: '',
             horoscope: ''
@@ -13,7 +14,7 @@ class Horoscope extends Component {
     }
 
     componentDidMount() {
-        fetchHoroscope('https://aztro.sameerkumar.website/?sign=aries&day=today')
+        fetchHoroscope(`https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`)
         .then(result => {
             if (typeof result === 'string') {
                 this.setState({
@@ -32,7 +33,7 @@ class Horoscope extends Component {
     render() {
         const { src, alt, signTitle } = this.props.location.state;
         const { isLoading, errorMsg, horoscope } = this.state;
-        console.log(horoscope)
+
         return (
             <main className="horoscope-main">
                 <img className='horoscope-sign-img' src={src} alt={alt} />

@@ -16,18 +16,18 @@ import sagittarius from'../../images/sagittarius.png';
 
 const Home = () => {
     const images = [
-        {src: capricorn, alt:'Capricorn'},
-        {src: aquarius, alt: 'Aquarius'},
-        {src: pisces, alt: 'Pisces'},
-        {src: aries, alt: 'Aries'},
-        {src: taurus, alt: 'Taurus'},
-        {src: gemini, alt: 'Gemini'}, 
-        {src: cancer, alt: 'Cancer'}, 
-        {src: leo, alt: 'Leo'},
-        {src: virgo, alt: 'Virgo'},
-        {src: libra, alt: 'Libra'},
-        {src: scorpio, alt: 'Scorpio'}, 
-        {src: sagittarius, alt: 'Sagittarius'}
+        {src: capricorn, alt:'capricorn'},
+        {src: aquarius, alt: 'aquarius'},
+        {src: pisces, alt: 'pisces'},
+        {src: aries, alt: 'aries'},
+        {src: taurus, alt: 'taurus'},
+        {src: gemini, alt: 'gemini'}, 
+        {src: cancer, alt: 'cancer'}, 
+        {src: leo, alt: 'leo'},
+        {src: virgo, alt: 'virgo'},
+        {src: libra, alt: 'libra'},
+        {src: scorpio, alt: 'scorpio'}, 
+        {src: sagittarius, alt: 'sagittarius'}
     ];
     
     const signComponents = images.map((image, index) => {
