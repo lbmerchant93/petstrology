@@ -44,7 +44,6 @@ class Horoscope extends Component {
         } else if (when === 'today') {
             url = `https://aztro.sameerkumar.website/?sign=${this.state.sign}&day=today`
         }
-        console.log(url)
         this.retrieveHoroscopeData(url)
         this.setState({ day: when })
     }
@@ -73,8 +72,8 @@ class Horoscope extends Component {
                             <li className='days-mood'>Mood: {horoscope.mood}</li>
                         </ul>
                         {day !== 'yesterday' && <button className='yesterday' onClick={() => this.retrieveDifferentDay('yesterday')}>Yesterday</button>}
-                        {day !== 'today' && <button className='today'>Today</button>}
-                        {day !== 'tomorrow' && <button className='tomorrow'>Tomorrow</button>}
+                        {day !== 'today' && <button className='today' onClick={() => this.retrieveDifferentDay('today')}>Today</button>}
+                        {day !== 'tomorrow' && <button className='tomorrow' onClick={() => this.retrieveDifferentDay('tomorrow')}>Tomorrow</button>}
                     </section>
                     }     
                 </div>
