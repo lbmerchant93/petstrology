@@ -11,15 +11,16 @@ class App extends Component {
   constructor() {
     super() 
     this.state = {
-      sign: '',
-      day: 'today',
       isLoading: true,
       errorMsg: '',
-      horoscope: ''
+      day: 'today',
+      sign: '',
+      horoscope: '',
+      image: ''
     }
   }
 
-  retrieveHoroscopeData = async (url, alt) => {
+  retrieveHoroscopeData = async (url, src, alt) => {
     await fetchHoroscope(url)
     .then(result => {
         this.setState({ isLoading: true, horoscope: '' })
@@ -33,6 +34,7 @@ class App extends Component {
           } else {
             setTimeout(() => {
                 this.setState({
+                    image: src,
                     sign: alt, 
                     horoscope: result,
                     isLoading: false
@@ -56,7 +58,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+
     return (
       <div className="App">
         <Header />

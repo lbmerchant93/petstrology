@@ -13,7 +13,7 @@ const Sign = (props) => {
                 pathname: `/Horoscope/${alt}`
             }} 
             className='sign-link'
-            onClick={() => props.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${alt}&day=today`, alt)}
+            onClick={() => props.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${alt}&day=today`, src, alt)}
         >
             <article className='all-star-signs'>
                 <h2 className='sign-title'>{signTitle}</h2>
