@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import './App.css';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
+import Horoscope from '../Horoscope/Horoscope';
 import Footer from '../Footer/Footer';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path='/' exact component={Home} />
+          <Route path='/Horoscope/:sign/Today' exact component={Horoscope} />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>
         <Footer />

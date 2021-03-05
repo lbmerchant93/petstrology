@@ -1,0 +1,22 @@
+.horoscope-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.horoscope-sign-img,
+.details {
+    width: 50%;
+}
+
+.details {
+    padding: 20px;
+}
+
+.horoscope-sign-img {
+    margin-left: 10px;
+    max-height: 70vh; 
+}
+
+.horoscope-sign-title {
+    color: rgb(148,84,110);
+}
