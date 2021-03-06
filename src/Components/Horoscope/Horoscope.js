@@ -1,66 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Horoscope.css';
-import { fetchHoroscope } from '../../apiCalls';
 
-class Horoscope extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isLoading: true,
-            errorMsg: '',
-            horoscope: ''
-        }
-    }
+const Horoscope = (props) => {
+    const { day, isLoading, errorMsg, horoscope, image, alt, sign } = props.horoscope;
 
-    componentDidMount() {
-        fetchHoroscope('https://aztro.sameerkumar.website/?sign=aries&day=today')
-        .then(result => {
-            if (typeof result === 'string') {
-                this.setState({
-                  isLoading: false,
-                  errorMsg: result
-                })
-              } else {
-                this.setState({
-                    horoscope: result,
-                    isLoading: false
-                  })
-              }
-        })
-    }
-
-    render() {
-        const { src, alt, signTitle } = this.props.location.state;
-        const { isLoading, errorMsg, horoscope } = this.state;
-        console.log(horoscope)
-        return (
-            <main className="horoscope-main">
-                <img className='horoscope-sign-img' src={src} alt={alt} />
-                <div className='details'>
-                    <h2 className='horoscope-sign-title'>{signTitle}</h2>
-                    {errorMsg && <p className='error-message'>{errorMsg}</p>}
-                    {isLoading && <p className='loading-message'>Loading...</p>}
-                    {horoscope  && 
-                    <section>
-                        <ul>
-                            <li className='days-date'>Current Date: {horoscope.current_date}</li>
-                            <li className='date-range'>Birthday Range: {horoscope.date_range}</li>
-                            <li className='days-color'>Color: {horoscope.color}</li>
-                            <li className='days-compatibility'>Compatibility: {horoscope.compatibility}</li>
-                            <li className='days-description'>Description: {horoscope.description}</li>
-                            <li className='days-lucky-numbers'>Lucky Number: {horoscope.lucky_number}</li>
-                            <li className='days-lucky-time'>Lucky Time: {horoscope.lucky_time}</li>
-                            <li className='days-mood'>Mood: {horoscope.mood}</li>
-                        </ul>
-                        <button className='yesterday'>Yesterday</button>
-                        <button className='today'>Today</button>
-                        <button className='tomorrow'>Tomorrow</button>
-                    </section>
-                    }     
-                </div>
-            </main>
-        )
-    }
+    return (
+        <main className="horoscope-main">
+            {errorMsg && <p className='error-message'>{errorMsg}</p>}
+            {isLoading && <p className='loading-message'>Loading...</p>}
+            {horoscope  &&   
+                <section className="horoscope-content">
+                    <img className='horoscope-sign-img' src={image} alt={alt} />
+                    <div className='details'>
+                        <h2 className='horoscope-sign-title'>{sign.toUpperCase()}</h2>
+                            <ul>
+                                <li className='days-date'><h3>Current Date:</h3> {horoscope.current_date}</li>
+                                <li className='date-range'><h3>Birthday Range:</h3> {horoscope.date_range}</li>
+                                <li className='days-color'><h3>Color:</h3> {horoscope.color}</li>
+                                <li className='days-compatibility'><h3>Compatibility:</h3> {horoscope.compatibility}</li>
+                               
+                                <li className='days-lucky-numbers'><h3>Lucky Number:</h3> {horoscope.lucky_number}</li>
+                                <li className='days-lucky-time'><h3>Lucky Time:</h3> {horoscope.lucky_time}</li>
+                                <li className='days-mood'><h3>Mood:</h3> {horoscope.mood}</li>
+                                 <li className='days-description'><h3>Description:</h3> {horoscope.description}</li>
+                            </ul>
+                            {day !== 'yesterday' && <button className='yesterday' onClick={() => props.retrieveDifferentDay('yesterday')}>Yesterday</button>}
+                            {day !== 'today' && <button className='today' onClick={() => props.retrieveDifferentDay('today')}>Today</button>}
+                            {day !== 'tomorrow' && <button className='tomorrow' onClick={() => props.retrieveDifferentDay('tomorrow')}>Tomorrow</button>} 
+                    </div>
+                </section>
+            }   
+        </main>
+    )
 }
+
 
 export default Horoscope; 

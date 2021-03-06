@@ -1,6 +1,7 @@
-.horoscope-main {
+.horoscope-content {
     display: flex;
     flex-direction: row;
+    animation: fadeIn ease 1.5s;
 }
 
 .horoscope-sign-img,
@@ -9,7 +10,8 @@
 }
 
 .details {
-    padding: 20px;
+    padding: 5px 10px 5px 20px;
+    text-align: center;
 }
 
 .horoscope-sign-img {
@@ -19,4 +21,34 @@
 
 .horoscope-sign-title {
     color: rgb(148,84,110);
+    margin: 0 0 5px 0;
+}
+
+.yesterday,
+.today,
+.tomorrow {
+    width: 50%;
+}
+
+.error-message,
+.loading-message {
+    text-align: center;
+    padding: 50px;
+}
+
+h3 {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
