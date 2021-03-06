@@ -14,15 +14,38 @@ const Horoscope = (props) => {
                     <div className='details'>
                         <h2 className='horoscope-sign-title'>{sign.toUpperCase()}</h2>
                             <ul>
-                                <li className='days-date'><h3>Current Date:</h3> {horoscope.current_date}</li>
-                                <li className='date-range'><h3>Birthday Range:</h3> {horoscope.date_range}</li>
-                                <li className='days-color'><h3>Color:</h3> {horoscope.color}</li>
-                                <li className='days-compatibility'><h3>Compatibility:</h3> {horoscope.compatibility}</li>
-                               
-                                <li className='days-lucky-numbers'><h3>Lucky Number:</h3> {horoscope.lucky_number}</li>
-                                <li className='days-lucky-time'><h3>Lucky Time:</h3> {horoscope.lucky_time}</li>
-                                <li className='days-mood'><h3>Mood:</h3> {horoscope.mood}</li>
-                                 <li className='days-description'><h3>Description:</h3> {horoscope.description}</li>
+                                <li className='days-date'>
+                                    <h3>Current Date:</h3>
+                                    {horoscope.current_date}
+                                </li>
+                                <li className='date-range'>
+                                    <h3>Birthday Range:</h3> 
+                                    {horoscope.date_range}
+                                </li>
+                                <li className='days-color'>
+                                    <h3>Color:</h3> 
+                                    {horoscope.color}
+                                </li>
+                                <li className='days-compatibility'>
+                                    <h3>Compatibility:</h3> 
+                                    {horoscope.compatibility}
+                                </li>
+                                <li className='days-lucky-numbers'>
+                                    <h3>Lucky Number:</h3> 
+                                    {horoscope.lucky_number}
+                                </li>
+                                <li className='days-lucky-time'>
+                                    <h3>Lucky Time:</h3> 
+                                    {horoscope.lucky_time}
+                                </li>
+                                <li className='days-mood'>
+                                    <h3>Mood:</h3> 
+                                    {horoscope.mood}
+                                </li>
+                                <li className='days-description'>
+                                     <h3>Description:</h3> 
+                                     {horoscope.description}
+                                </li>
                             </ul>
                             {day !== 'yesterday' && <button className='yesterday' onClick={() => props.retrieveDifferentDay('yesterday')}>Yesterday</button>}
                             {day !== 'today' && <button className='today' onClick={() => props.retrieveDifferentDay('today')}>Today</button>}
