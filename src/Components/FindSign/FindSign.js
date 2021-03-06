@@ -1,10 +1,13 @@
 import React from 'react';
+import Form from '../Form/Form'
 import './FindSign.css';
 
 const FindSign = () => {
 
     return (
-        <main>This is the Find Sign page</main>
+        <main>
+            <Form />
+        </main>
     )
 }
 
