@@ -17,16 +17,26 @@ class Form extends Component {
     render() {
         return (
             <form>
-                <label>
-                    Name:
+                <label className='name-label'>
+                    NAME:
                     <input
                     className='name-input'
                     type='text'
                     name='name'
-                    placeholder='Name'
+                    placeholder='NAME'
                     value={this.state.name}
                     onChange={event => this.handleChange(event)}/>
                 </label>
+                <label className='date-label'>
+                    BIRTH DATE:
+                    <input
+                    className='date-input'
+                    type='date'
+                    name='date'
+                    value={this.state.date}
+                    onChange={event => this.handleChange(event)}/>
+                </label>
+                <button className='submit' >VIEW YOUR SIGN</button>
             </form>
         )
     }
