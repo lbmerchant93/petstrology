@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class Form extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             name: '',
             date: ''
@@ -12,6 +12,20 @@ class Form extends Component {
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
+    }
+
+    submitBirthDate = event => {
+        event.preventDefault();
+        const newBirthDate = {
+            ...this.state,
+            id: Date.now()
+        }
+        this.props.addBirthDate(newBirthDate);
+        this.clearInputs();
+    }
+
+    clearInputs = () => {
+        this.setState({ name: '', date: ''})
     }
 
     render() {
@@ -36,7 +50,7 @@ class Form extends Component {
                     value={this.state.date}
                     onChange={event => this.handleChange(event)}/>
                 </label>
-                <button className='submit' >VIEW YOUR SIGN</button>
+                <button className='submit' onClick={event => this.submitBirthDate(event)}>VIEW YOUR SIGN</button>
             </form>
         )
     }
