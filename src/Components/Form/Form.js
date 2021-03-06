@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Form.css';
+import compareDates from '../../utils/compareDates';
 
 class Form extends Component {
     constructor(props) {
@@ -15,10 +16,12 @@ class Form extends Component {
     }
 
     submitBirthDate = event => {
+        let foundSign = compareDates(this.state.date);
         event.preventDefault();
         const newBirthDate = {
             ...this.state,
-            id: Date.now()
+            id: Date.now(),
+            sign: foundSign
         }
         this.props.addBirthDate(newBirthDate);
         this.clearInputs();
