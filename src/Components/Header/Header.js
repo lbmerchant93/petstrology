@@ -7,7 +7,7 @@ const Header = (props) => {
         <header>
             <NavLink to='/' onClick={() => props.goingToPage('home')}><h1 className="site-title" >Petstrology</h1></NavLink>
             <NavLink to='/' onClick={() => props.goingToPage('home')}>Home</NavLink>
-            <button className="saved-signs-btn">My Saved Signs</button>
+            <NavLink to='/FindYourSigns' className="saved-signs-btn">Find Your Signs</NavLink>
         </header>
     )
 }
