@@ -7,7 +7,11 @@ const Home = (props) => {
     
     const signComponents = signImages.map((image, index) => {
         return (
-            <Sign key={index} image={image} retrieveHoroscopeData={props.retrieveHoroscopeData}/>
+            <Sign 
+                key={index} 
+                image={image} 
+                retrieveHoroscopeData={props.retrieveHoroscopeData}
+            />
         )
     })
 

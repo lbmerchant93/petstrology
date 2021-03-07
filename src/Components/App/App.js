@@ -31,7 +31,8 @@ class App extends Component {
             setTimeout(() => {
                 this.setState({
                     isLoading: false,
-                    errorMsg: result
+                    errorMsg: result,
+                    atHome: false
                 })
             }, 600)
           } else {
@@ -41,7 +42,8 @@ class App extends Component {
                     image: src,
                     sign: alt, 
                     horoscope: result,
-                    isLoading: false
+                    isLoading: false,
+                    atHome: false
                 })
             }, 600)   
           }
@@ -83,7 +85,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header goingToPage={this.goingToPage} atHome={atHome}/>
+        <Header 
+          goingToPage={this.goingToPage} 
+          atHome={atHome}
+        />
         <Switch>
           <Route path='/' exact render={() => 
             <Home 
