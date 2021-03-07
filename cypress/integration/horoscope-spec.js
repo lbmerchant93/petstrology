@@ -86,4 +86,8 @@ describe('Dashboard UI', () => {
         cy.get('.days-description').contains('Your busy lifestyle has been fun, but today it\'s time to slow down and just relax.')
     })
 
+    it('Should not have the today button visible when on today\'s horoscope', () => {
+        cy.get('.today').should('not.exist')
+    })
+
 })
