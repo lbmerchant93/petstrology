@@ -22,4 +22,16 @@ describe('Dashboard UI', () => {
         cy.get('.horoscope-sign-title').contains('CAPRICORN')
     })
 
+    it('Should have the details of today\'s horoscope', () => {
+        cy.get('.days-date').contains('March 1, 2021')
+        cy.get('.date-range').contains('Jan 20 - Feb 18')
+        cy.get('.days-color').contains('Blue')
+        cy.get('.days-compatibility').contains('Taurus')
+        cy.get('.days-lucky-numbers').contains('93')
+        cy.get('.days-lucky-time').contains('6pm')
+        cy.get('.days-mood').contains('Relieved')
+        cy.get('.days-description').contains('Your busy lifestyle has been fun, but today it\'s time to slow down and just relax.')
+
+    })
+
 })
