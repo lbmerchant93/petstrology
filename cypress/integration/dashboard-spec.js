@@ -13,7 +13,13 @@ describe('Dashboard UI', () => {
         cy.url().should('include', 'FindYourSigns')
     })
 
-    it('Should have a section containing all 12 of the astrological signs', () => {
+    it('Should have a section containing all 12 of the astrological signs links', () => {
         cy.get('.all-star-signs-main a').should('have.length', '12')
+    })
+
+    it('Should be taken to the Horoscope page by clicking a sign link', () => {
+        cy.get('.all-star-signs').first()
+            .click()
+        cy.url().should('include', 'Horoscope/capricorn')
     })
 })
