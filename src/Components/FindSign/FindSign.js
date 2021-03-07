@@ -27,7 +27,7 @@ const FindSign = (props) => {
             <h3 className='saved-search-title'>YOUR SEARCHED SIGNS</h3>
             {!props.savedDates.length && 
             <div className='none-saved'>
-                <h3>No dates saved yet! Fill out the form above to save your loved ones dates! </h3>
+                <h3>No dates saved yet! Fill out the form above to save your loved one's dates! </h3>
             </div>}
             {props.savedDates.length !== 0 && 
             <article className='saved-signs'>
