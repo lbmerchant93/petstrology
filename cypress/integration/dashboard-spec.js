@@ -12,4 +12,8 @@ describe('Dashboard UI', () => {
             .click()
         cy.url().should('include', 'FindYourSigns')
     })
+
+    it('Should have a section containing all 12 of the astrological signs', () => {
+        cy.get('.all-star-signs-main a').should('have.length', '12')
+    })
 })
