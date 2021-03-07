@@ -1,0 +1,10 @@
+.find-signs-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.none-saved,
+.saved-signs {
+    margin-top: 20px;
+}
