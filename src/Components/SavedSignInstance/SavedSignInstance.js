@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './SavedSignInstance.css';
 
 const SavedSignInstance = (props) => {
@@ -15,7 +16,13 @@ const SavedSignInstance = (props) => {
             </li>
             <li className='sign'>
                 <h3>Sign:</h3>
-                {saved.sign}
+                <Link to={{
+                    pathname: `/Horoscope/${saved.sign.toLowerCase()}`
+                    }}
+                    // onClick={() => props.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${saved.sign.toLowerCase()}&day=today`, src, alt)}>
+                    >
+                    {saved.sign}
+                </Link> 
             </li>
         </section>
     )
