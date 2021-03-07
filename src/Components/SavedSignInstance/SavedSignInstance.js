@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import signImages from '../../utils/signImages';
 import './SavedSignInstance.css';
 
 const SavedSignInstance = (props) => {
-    const { saved, formatDate } = props
+    const { saved, formatDate } = props;
+    const foundImage = signImages.find(sign => {
+        return sign.alt === saved.sign.toLowerCase()
+    })
+
     return (
         <section className='saved-instance' key={saved.id}>
             <li className='name'>
@@ -17,10 +22,9 @@ const SavedSignInstance = (props) => {
             <li className='sign'>
                 <h3>Sign:</h3>
                 <Link to={{
-                    pathname: `/Horoscope/${saved.sign.toLowerCase()}`
+                    pathname: `/Horoscope/${foundImage.alt}`
                     }}
-                    // onClick={() => props.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${saved.sign.toLowerCase()}&day=today`, src, alt)}>
-                    >
+                    onClick={() => props.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${foundImage.alt}&day=today`, foundImage.src, foundImage.alt)}>
                     {saved.sign}
                 </Link> 
             </li>

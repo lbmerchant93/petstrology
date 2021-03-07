@@ -75,9 +75,24 @@ class App extends Component {
       <div className="App">
         <Header goingToPage={this.goingToPage}/>
         <Switch>
-          <Route path='/' exact render={() => <Home retrieveHoroscopeData={this.retrieveHoroscopeData} />} />
-          <Route path='/FindYourSigns' exact render={() => <FindSign savedDates={this.state.savedDates} addBirthDate={this.addBirthDate} />} />
-          <Route path='/Horoscope/:sign' exact render={() => <Horoscope horoscope={this.state} retrieveDifferentDay={this.retrieveDifferentDay}/>} />
+          <Route path='/' exact render={() => 
+            <Home 
+              retrieveHoroscopeData={this.retrieveHoroscopeData} 
+            />} 
+          />
+          <Route path='/FindYourSigns' exact render={() => 
+            <FindSign 
+              savedDates={this.state.savedDates}
+              addBirthDate={this.addBirthDate}
+              retrieveHoroscopeData={this.retrieveHoroscopeData}
+            />}
+          />
+          <Route path='/Horoscope/:sign' exact render={() => 
+            <Horoscope 
+              horoscope={this.state} 
+              retrieveDifferentDay={this.retrieveDifferentDay}
+            />} 
+          />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>
         <Footer />

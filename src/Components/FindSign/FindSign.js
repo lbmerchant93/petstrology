@@ -8,7 +8,12 @@ const FindSign = (props) => {
     let displaySavedDates = props.savedDates.map(saved => {
         let formatDate = moment(saved.date).format("MMMM Do")
         return (
-            <SavedSignInstance saved={saved} formatDate={formatDate} />
+            <SavedSignInstance 
+                key={Date.now()} 
+                saved={saved} 
+                formatDate={formatDate} 
+                retrieveHoroscopeData={props.retrieveHoroscopeData}
+            />
         )
     })
     
