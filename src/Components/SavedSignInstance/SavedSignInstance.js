@@ -12,21 +12,22 @@ const SavedSignInstance = (props) => {
     return (
         <section className='saved-instance' key={saved.id}>
             <li className='name'>
-                <h3>Who:</h3>
+                <h3 className='who'>Who:</h3>
                 {saved.name}
             </li>
-            <li className='birth-date'>
-                <h3>Birth Date:</h3>
-                {formatDate}
-            </li>
             <li className='sign'>
-                <h3>Sign:</h3>
+                <h3 className='who-sign'>Sign:</h3>
                 <Link to={{
                     pathname: `/Horoscope/${foundImage.alt}`
                     }}
+                    className='link-to-sign'
                     onClick={() => props.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${foundImage.alt}&day=today`, foundImage.src, foundImage.alt)}>
                     {saved.sign}
                 </Link> 
+            </li>
+            <li className='birth-date'>
+                <h3 className='who-birth-date'>Birth Date:</h3>
+                {formatDate}
             </li>
             <button className='remove-saved-sign' onClick={() => props.removeBirthDate(id)}>REMOVE</button>
         </section>

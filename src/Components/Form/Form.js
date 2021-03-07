@@ -53,7 +53,7 @@ class Form extends Component {
                     value={this.state.date}
                     onChange={event => this.handleChange(event)}/>
                 </label>
-                <button disabled={!this.state.name || !this.state.date} className={this.state.date ? 'disabled' : 'submit'} onClick={event => this.submitBirthDate(event)}>VIEW YOUR SIGN</button>
+                <button disabled={!this.state.name || !this.state.date} className={!this.state.name || !this.state.date ? 'disabled' : 'submit'} onClick={event => this.submitBirthDate(event)}>VIEW YOUR SIGN</button>
             </form>
         )
     }

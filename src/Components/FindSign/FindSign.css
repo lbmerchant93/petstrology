@@ -27,3 +27,8 @@
 h4 {
     margin: 0;
 }
+
+.find-title,
+.saved-search-title {
+    color: rgb(45, 181, 158);
+}
