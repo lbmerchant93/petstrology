@@ -1,5 +1,11 @@
 describe('Dashboard UI', () => {
     beforeEach(() => {
+        cy.fixture('testHoroscope.json')
+            .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+                statusCode: 200,
+                body: testHoroscope.horoscopeToday
+            })})
+
         cy.visit('http://localhost:3000');
     })
 
