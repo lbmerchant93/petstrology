@@ -95,4 +95,9 @@ describe('Dashboard UI', () => {
         cy.get('.yesterday').should('not.exist')
     })
 
+    it('Should not have the tomorrow button visible when on tomorrow\'s horoscope', () => {
+        cy.get('.tomorrow').click()
+        cy.get('.tomorrow').should('not.exist')
+    })
+
 })
