@@ -1,0 +1,25 @@
+.find-signs-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.none-saved,
+.saved-signs {
+    margin-top: 20px;
+}
+
+.saved-signs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+h4 {
+    margin: 0;
+}

@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import './App.css';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
+import FindSign from '../FindSign/FindSign';
 import Horoscope from '../Horoscope/Horoscope';
 import Footer from '../Footer/Footer';
 import { fetchHoroscope } from '../../apiCalls';
@@ -16,7 +17,8 @@ class App extends Component {
       day: '',
       sign: '',
       horoscope: '',
-      image: ''
+      image: '',
+      savedDates: []
     }
   }
 
@@ -63,6 +65,10 @@ class App extends Component {
     }
   }
 
+  addBirthDate = (newBirthDate) => {
+    this.setState({ savedDates: [...this.state.savedDates, newBirthDate]})
+  }
+
   render() {
 
     return (
@@ -70,6 +76,7 @@ class App extends Component {
         <Header goingToPage={this.goingToPage}/>
         <Switch>
           <Route path='/' exact render={() => <Home retrieveHoroscopeData={this.retrieveHoroscopeData} />} />
+          <Route path='/FindYourSigns' exact render={() => <FindSign savedDates={this.state.savedDates} addBirthDate={this.addBirthDate} />} />
           <Route path='/Horoscope/:sign' exact render={() => <Horoscope horoscope={this.state} retrieveDifferentDay={this.retrieveDifferentDay}/>} />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>
