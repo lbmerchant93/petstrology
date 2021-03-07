@@ -22,4 +22,9 @@ describe('Dashboard UI', () => {
             .click()
         cy.url().should('include', 'Horoscope/capricorn')
     })
+
+    it('Should have a sign title and image in the sign link', () => {
+        cy.get('.all-star-signs').eq(0).contains('CAPRICORN')
+        cy.get('.sign-img').eq(0).should('have.attr', 'alt', 'capricorn')
+    })
 })
