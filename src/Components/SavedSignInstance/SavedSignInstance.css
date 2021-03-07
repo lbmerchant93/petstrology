@@ -1,0 +1,14 @@
+.saved-instance {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(0,0,0, 0.5);
+    background-blend-mode: darken;
+    border: solid 1px rgb(64,38,234);
+    border-radius: 10px;
+    min-height: 160px;
+    min-width: 160px;
+    max-height: 160px;
+    max-width: 160px;
+}
