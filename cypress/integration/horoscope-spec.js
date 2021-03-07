@@ -47,7 +47,7 @@ describe('Dashboard UI', () => {
 
     it('Should have a button to display yesterday\'s horoscope', () => {
         cy.get('.yesterday')
-            .click().wait(300)
+            .click()
             cy.get('.days-date').contains('February 28, 2021')
             cy.get('.date-range').contains('Jan 20 - Feb 18')
             cy.get('.days-color').contains('Black')
@@ -60,7 +60,7 @@ describe('Dashboard UI', () => {
 
     it('Should have a button to display tomorrow\'s horoscope', () => {
         cy.get('.tomorrow')
-            .click().wait(300)
+            .click()
             cy.get('.days-date').contains('March 2, 2021')
             cy.get('.date-range').contains('Jan 20 - Feb 18')
             cy.get('.days-color').contains('Green')
@@ -69,6 +69,21 @@ describe('Dashboard UI', () => {
             cy.get('.days-lucky-time').contains('9am')
             cy.get('.days-mood').contains('Sluggish')
             cy.get('.days-description').contains('Take today to enjoy a slower pace. Others may seem to be getting ahead of you but you should lay low today.')    
+    })
+
+    it('Should have the details of today\'s horoscope when clicking the today button if on another date already', () => {
+        cy.get('.yesterday')
+            .click()
+        cy.get('.today')
+            .click()
+        cy.get('.days-date').contains('March 1, 2021')
+        cy.get('.date-range').contains('Jan 20 - Feb 18')
+        cy.get('.days-color').contains('Blue')
+        cy.get('.days-compatibility').contains('Taurus')
+        cy.get('.days-lucky-numbers').contains('93')
+        cy.get('.days-lucky-time').contains('6pm')
+        cy.get('.days-mood').contains('Relieved')
+        cy.get('.days-description').contains('Your busy lifestyle has been fun, but today it\'s time to slow down and just relax.')
     })
 
 })
