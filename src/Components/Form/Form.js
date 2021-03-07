@@ -33,7 +33,7 @@ class Form extends Component {
 
     render() {
         return (
-            <form>
+            <form className='form'>
                 <label className='name-label'>
                     NAME:
                     <input
