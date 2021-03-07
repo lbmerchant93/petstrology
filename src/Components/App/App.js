@@ -18,7 +18,8 @@ class App extends Component {
       sign: '',
       horoscope: '',
       image: '',
-      savedDates: []
+      savedDates: [],
+      atHome: true
     }
   }
 
@@ -60,8 +61,11 @@ class App extends Component {
         day: 'today',
         sign: '',
         horoscope: '',
-        image: ''
+        image: '',
+        atHome: true
       })
+    } else {
+      this.setState({ atHome: false })
     }
   }
 
@@ -75,10 +79,11 @@ class App extends Component {
   }
 
   render() {
+    const { atHome } = this.state;
 
     return (
       <div className="App">
-        <Header goingToPage={this.goingToPage}/>
+        <Header goingToPage={this.goingToPage} atHome={atHome}/>
         <Switch>
           <Route path='/' exact render={() => 
             <Home 
