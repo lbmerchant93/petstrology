@@ -18,5 +18,15 @@
         "lucky_number":"25",
         "lucky_time":"2pm",
         "mood":"Excited"
+    },
+    "horoscopeTomorrow": {
+        "color":"Green",
+        "compatibility":"Gemini",
+        "current_date":"March 2, 2021",
+        "date_range":"Jan 20 - Feb 18",
+        "description":"Take today to enjoy a slower pace. Others may seem to be getting ahead of you but you should lay low today.",
+        "lucky_number":"7",
+        "lucky_time":"9am",
+        "mood":"Sluggish"
     }
 }
