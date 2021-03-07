@@ -20,6 +20,10 @@
     justify-content: center;
 }
 
+.saved-search-title {
+    margin-top: 20px;
+}
+
 h4 {
     margin: 0;
 }

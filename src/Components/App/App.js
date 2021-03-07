@@ -69,6 +69,11 @@ class App extends Component {
     this.setState({ savedDates: [...this.state.savedDates, newBirthDate]})
   }
 
+  removeBirthDate = (id) => {
+    const filteredDates = this.state.savedDates.filter(saved => saved.id !== id);
+    this.setState({ savedDates: filteredDates })
+  }
+
   render() {
 
     return (
@@ -84,6 +89,7 @@ class App extends Component {
             <FindSign 
               savedDates={this.state.savedDates}
               addBirthDate={this.addBirthDate}
+              removeBirthDate={this.removeBirthDate}
               retrieveHoroscopeData={this.retrieveHoroscopeData}
             />}
           />

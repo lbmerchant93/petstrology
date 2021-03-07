@@ -4,7 +4,7 @@ import signImages from '../../utils/signImages';
 import './SavedSignInstance.css';
 
 const SavedSignInstance = (props) => {
-    const { saved, formatDate } = props;
+    const { saved, formatDate, id } = props;
     const foundImage = signImages.find(sign => {
         return sign.alt === saved.sign.toLowerCase()
     })
@@ -28,6 +28,7 @@ const SavedSignInstance = (props) => {
                     {saved.sign}
                 </Link> 
             </li>
+            <button className='remove-saved-sign' onClick={() => props.removeBirthDate(id)}>REMOVE</button>
         </section>
     )
 }

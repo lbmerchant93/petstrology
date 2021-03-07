@@ -14,6 +14,8 @@ const FindSign = (props) => {
                 saved={saved} 
                 formatDate={formatDate} 
                 retrieveHoroscopeData={props.retrieveHoroscopeData}
+                removeBirthDate={props.removeBirthDate}
+                id={saved.id}
             />
         )
     })
@@ -22,6 +24,7 @@ const FindSign = (props) => {
         <main className='find-signs-main'>
             <h2 className='find-title'>Find Your Sign</h2>
             <Form addBirthDate={props.addBirthDate} />
+            <h3 className='saved-search-title'>Your searched signs</h3>
             {!props.savedDates.length && 
             <div className='none-saved'>
                 <h3>No dates saved yet! Fill out the form above to save your loved ones dates! </h3>
