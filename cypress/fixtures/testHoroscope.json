@@ -8,5 +8,15 @@
         "lucky_number":"93",
         "lucky_time":"6pm",
         "mood":"Relieved"
+    },
+    "horoscopeYesterday": {
+        "color":"Black",
+        "compatibility":"Aquarius",
+        "current_date":"February 28, 2021",
+        "date_range":"Jan 20 - Feb 18",
+        "description":"All of your hard work is starting to show. Take some time to enjoy the fruits of your labor.",
+        "lucky_number":"25",
+        "lucky_time":"2pm",
+        "mood":"Excited"
     }
 }

@@ -5,6 +5,11 @@ describe('Dashboard UI', () => {
                 statusCode: 200,
                 body: testHoroscope.horoscopeToday
             })})
+        cy.fixture('testHoroscope.json')
+        .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=yesterday', {
+            statusCode: 200,
+            body: testHoroscope.horoscopeYesterday
+        })})
 
         cy.visit('http://localhost:3000');
         cy.get('.all-star-signs').first()
@@ -31,7 +36,19 @@ describe('Dashboard UI', () => {
         cy.get('.days-lucky-time').contains('6pm')
         cy.get('.days-mood').contains('Relieved')
         cy.get('.days-description').contains('Your busy lifestyle has been fun, but today it\'s time to slow down and just relax.')
+    })
 
+    it('Should have a button to display yesterday\'s horoscope', () => {
+        cy.get('.yesterday')
+            .click()
+            cy.get('.days-date').contains('February 28, 2021')
+            cy.get('.date-range').contains('Jan 20 - Feb 18')
+            cy.get('.days-color').contains('Black')
+            cy.get('.days-compatibility').contains('Aquarius')
+            cy.get('.days-lucky-numbers').contains('25')
+            cy.get('.days-lucky-time').contains('2pm')
+            cy.get('.days-mood').contains('Excited')
+            cy.get('.days-description').contains('All of your hard work is starting to show. Take some time to enjoy the fruits of your labor.')    
     })
 
 })
