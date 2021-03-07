@@ -3,13 +3,14 @@ import SavedSignInstance from '../SavedSignInstance/SavedSignInstance';
 import Form from '../Form/Form';
 import './FindSign.css';
 import moment from 'moment';
+import { uid } from 'uid';
 
 const FindSign = (props) => {
     let displaySavedDates = props.savedDates.map(saved => {
         let formatDate = moment(saved.date).format("MMMM Do")
         return (
             <SavedSignInstance 
-                key={Date.now()} 
+                key={uid()} 
                 saved={saved} 
                 formatDate={formatDate} 
                 retrieveHoroscopeData={props.retrieveHoroscopeData}
