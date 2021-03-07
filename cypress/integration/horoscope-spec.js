@@ -17,4 +17,9 @@ describe('Dashboard UI', () => {
         cy.url().should('equal', 'http://localhost:3000/')
     })
 
+    it('Should have an image and sign title', () => {
+        cy.get('img').should('have.attr', 'alt', 'capricorn')
+        cy.get('.horoscope-sign-title').contains('CAPRICORN')
+    })
+
 })
