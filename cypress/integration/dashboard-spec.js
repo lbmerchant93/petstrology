@@ -13,6 +13,10 @@ describe('Dashboard UI', () => {
         cy.get('header').contains('Petstrology').should('be.visible')
     })
 
+    it('Should not have a link to view all signs', () => {
+        cy.get('.home-link').should('not.exist')
+    })
+
     it('Should have a link to the Find Your Sign page in the header', () => {
         cy.get('header .saved-signs-link')
             .click()
