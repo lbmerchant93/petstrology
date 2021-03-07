@@ -47,9 +47,9 @@ const Horoscope = (props) => {
                                      {horoscope.description}
                                 </li>
                             </ul>
-                            {day !== 'yesterday' && <button className='yesterday' onClick={() => props.retrieveDifferentDay('yesterday')}>Yesterday</button>}
-                            {day !== 'today' && <button className='today' onClick={() => props.retrieveDifferentDay('today')}>Today</button>}
-                            {day !== 'tomorrow' && <button className='tomorrow' onClick={() => props.retrieveDifferentDay('tomorrow')}>Tomorrow</button>} 
+                            {day !== 'yesterday' && <button className='yesterday' onClick={() => props.retrieveDifferentDay('yesterday')}>YESTERDAY</button>}
+                            {day !== 'today' && <button className='today' onClick={() => props.retrieveDifferentDay('today')}>TODAY</button>}
+                            {day !== 'tomorrow' && <button className='tomorrow' onClick={() => props.retrieveDifferentDay('tomorrow')}>TOMORROW</button>} 
                     </div>
                 </section>
             }   

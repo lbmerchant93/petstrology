@@ -3,7 +3,8 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    background-color: rgba(0,0,0, 0.5);
+    align-items: center;
+    background-color: rgba(0,0,0, 0.8);
     background-blend-mode: darken;
     border: solid 1px rgb(64,38,234);
     border-radius: 10px;
@@ -11,4 +12,22 @@
     min-width: 160px;
     max-height: 160px;
     max-width: 160px;
+}
+
+.remove-saved-sign {
+    width: 75%;
+}
+
+.remove-saved-sign:hover {
+    cursor: pointer;
+}
+
+.link-to-sign {
+    color: rgb(148,84,110);
+}
+
+.who,
+.who-sign,
+.who-birth-date {
+    color: rgb(62,162,217);
 }

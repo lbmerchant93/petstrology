@@ -18,7 +18,8 @@ class App extends Component {
       sign: '',
       horoscope: '',
       image: '',
-      savedDates: []
+      savedDates: [],
+      atHome: true
     }
   }
 
@@ -30,7 +31,8 @@ class App extends Component {
             setTimeout(() => {
                 this.setState({
                     isLoading: false,
-                    errorMsg: result
+                    errorMsg: result,
+                    atHome: false
                 })
             }, 600)
           } else {
@@ -40,7 +42,8 @@ class App extends Component {
                     image: src,
                     sign: alt, 
                     horoscope: result,
-                    isLoading: false
+                    isLoading: false,
+                    atHome: false
                 })
             }, 600)   
           }
@@ -60,8 +63,11 @@ class App extends Component {
         day: 'today',
         sign: '',
         horoscope: '',
-        image: ''
+        image: '',
+        atHome: true
       })
+    } else {
+      this.setState({ atHome: false })
     }
   }
 
@@ -69,15 +75,40 @@ class App extends Component {
     this.setState({ savedDates: [...this.state.savedDates, newBirthDate]})
   }
 
+  removeBirthDate = (id) => {
+    const filteredDates = this.state.savedDates.filter(saved => saved.id !== id);
+    this.setState({ savedDates: filteredDates })
+  }
+
   render() {
+    const { atHome } = this.state;
 
     return (
       <div className="App">
-        <Header goingToPage={this.goingToPage}/>
+        <Header 
+          goingToPage={this.goingToPage} 
+          atHome={atHome}
+        />
         <Switch>
-          <Route path='/' exact render={() => <Home retrieveHoroscopeData={this.retrieveHoroscopeData} />} />
-          <Route path='/FindYourSigns' exact render={() => <FindSign savedDates={this.state.savedDates} addBirthDate={this.addBirthDate} />} />
-          <Route path='/Horoscope/:sign' exact render={() => <Horoscope horoscope={this.state} retrieveDifferentDay={this.retrieveDifferentDay}/>} />
+          <Route path='/' exact render={() => 
+            <Home 
+              retrieveHoroscopeData={this.retrieveHoroscopeData} 
+            />} 
+          />
+          <Route path='/FindYourSigns' exact render={() => 
+            <FindSign 
+              savedDates={this.state.savedDates}
+              addBirthDate={this.addBirthDate}
+              removeBirthDate={this.removeBirthDate}
+              retrieveHoroscopeData={this.retrieveHoroscopeData}
+            />}
+          />
+          <Route path='/Horoscope/:sign' exact render={() => 
+            <Horoscope 
+              horoscope={this.state} 
+              retrieveDifferentDay={this.retrieveDifferentDay}
+            />} 
+          />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>
         <Footer />

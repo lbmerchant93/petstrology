@@ -4,9 +4,8 @@ import './Sign.css';
 
 const Sign = (props) => {
     const { src, alt } = props.image;
-    // const { retrieveHoroscopeDate } = props.retrieveHoroscopeDate;
     const signTitle = alt.toUpperCase();
-// console.log(props)
+    
     return (
         <Link 
             to={{
