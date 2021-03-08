@@ -148,3 +148,50 @@ describe('Dashboard UI 404 Error', () => {
       cy.get('main').contains("404 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
     })
  });
+
+ describe('Dashboard UI 500 Error', () => {
+    beforeEach(() => {
+        cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+          statusCode: 500
+        })
+      cy.visit('http://localhost:3000');
+      cy.get('.all-star-signs').first()
+            .click()
+    });
+  
+    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+      cy.get('main').contains("500 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
+    })
+ });
+
+ describe('Dashboard UI 500 Error', () => {
+    beforeEach(() => {
+        cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=yesterday', {
+          statusCode: 500
+        })
+        cy.visit('http://localhost:3000');
+        cy.get('.all-star-signs').first()
+            .click()
+        cy.get('.yesterday').click()
+    });
+  
+    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+      cy.get('main').contains("500 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
+    })
+ });
+
+ describe('Dashboard UI 500 Error', () => {
+    beforeEach(() => {
+        cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=tomorrow', {
+          statusCode: 500
+        })
+        cy.visit('http://localhost:3000');
+        cy.get('.all-star-signs').first()
+            .click()
+        cy.get('.tomorrow').click()
+    });
+  
+    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+      cy.get('main').contains("500 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
+    })
+ });
