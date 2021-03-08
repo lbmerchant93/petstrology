@@ -5,11 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./images/vector.jpeg');
+  /* background-image: url('./images/vector.jpeg');
   background-position: center;
   background-size: 500px 500px;
   background-color: rgba(46,8,0, 0.9);
-  background-blend-mode: darken;
+  background-blend-mode: darken; */
 }
 
 code {
