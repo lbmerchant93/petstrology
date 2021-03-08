@@ -4,7 +4,7 @@ import Sign from '../Sign/Sign';
 import './Home.css';
 import signImages from '../../utils/signImages';
 
-const Home = ({ retrieveHoroscopeData }) => {
+const Home = ({ retrieveHoroscopeData, goingToPage }) => {
     
     const signComponents = signImages.map((image, index) => {
         return (

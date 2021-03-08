@@ -19,11 +19,14 @@ class App extends Component {
       horoscope: '',
       image: '',
       savedDates: [],
-      atHome: true
+      atHome: true,
+      atFindSign: false
     }
   }
 
   retrieveHoroscopeData = async (url, src, alt, when) => {
+    this.resetState()
+    this.goingToPage('atHoroscope')
     await fetchHoroscope(url)
     .then(result => {
         this.setState({ isLoading: true, horoscope: '' })
@@ -55,19 +58,35 @@ class App extends Component {
     this.retrieveHoroscopeData(url, this.state.image, this.state.sign, when)
   }
 
+  resetState = () => {
+    this.setState({
+      isLoading: true,
+      errorMsg: '',
+      day: 'today',
+      sign: '',
+      horoscope: '',
+      image: '',
+      atHome: false,
+      atFindSign: false
+    })
+  }
+
   goingToPage = (page) => {
-    if(page === 'home') {
+    if (page === 'atHome') {
       this.setState({
-        isLoading: true,
-        errorMsg: '',
-        day: 'today',
-        sign: '',
-        horoscope: '',
-        image: '',
-        atHome: true
+        atHome: true,
+        atFindSign: false
       })
-    } else {
-      this.setState({ atHome: false })
+    } else if (page === 'atFindSign') {
+      this.setState({ 
+        atHome: false,
+        atFindSign: true
+      })
+    } else if (page === 'atHoroscope') {
+      this.setState({
+        atHome: false,
+        atFindSign: false
+      })
     }
   }
 
@@ -81,13 +100,14 @@ class App extends Component {
   }
 
   render() {
-    const { atHome } = this.state;
+    const { atHome, atFindSign } = this.state;
 
     return (
       <div className="App">
         <Header 
           goingToPage={this.goingToPage} 
           atHome={atHome}
+          atFindSign={atFindSign}
         />
         <Switch>
           <Route path='/' exact render={() => 
