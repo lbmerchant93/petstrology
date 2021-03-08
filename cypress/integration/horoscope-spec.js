@@ -119,6 +119,11 @@ describe('Horoscope UI 404 Error', () => {
 
  describe('Horoscope UI 404 Error', () => {
     beforeEach(() => {
+        cy.fixture('testHoroscope.json')
+            .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+                statusCode: 200,
+                body: testHoroscope.horoscopeToday
+            })})
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=yesterday', {
           statusCode: 404
         })
@@ -135,6 +140,12 @@ describe('Horoscope UI 404 Error', () => {
 
  describe('Horoscope UI 404 Error', () => {
     beforeEach(() => {
+        cy.fixture('testHoroscope.json')
+            .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+                statusCode: 200,
+                body: testHoroscope.horoscopeToday
+            })})
+
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=tomorrow', {
           statusCode: 404
         })
@@ -166,6 +177,12 @@ describe('Horoscope UI 404 Error', () => {
 
  describe('Horoscope UI 500 Error', () => {
     beforeEach(() => {
+        cy.fixture('testHoroscope.json')
+            .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+                statusCode: 200,
+                body: testHoroscope.horoscopeToday
+            })})
+
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=yesterday', {
           statusCode: 500
         })
@@ -182,6 +199,12 @@ describe('Horoscope UI 404 Error', () => {
 
  describe('Horoscope UI 500 Error', () => {
     beforeEach(() => {
+        cy.fixture('testHoroscope.json')
+            .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+                statusCode: 200,
+                body: testHoroscope.horoscopeToday
+            })})
+
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=tomorrow', {
           statusCode: 500
         })
@@ -218,15 +241,22 @@ describe('Horoscope UI 404 Error', () => {
   describe('Horoscope UI Loading', () => {
     beforeEach(() => {
         cy.fixture('testHoroscope.json')
+            .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+                statusCode: 200,
+                body: testHoroscope.horoscopeToday
+            })})
+
+        cy.fixture('testHoroscope.json')
         .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=yesterday', {
             statusCode: 200,
             delay: 100,
-            body: testHoroscope.horoscopeToday
+            body: testHoroscope.horoscopeYesterday
         })})
   
         cy.visit('http://localhost:3000');
         cy.get('.all-star-signs').first()
             .click()
+        cy.get('.yesterday').click()
       });
   
       it('Should have a loading message while retrieving the Horoscope information for yesterday', () => {
@@ -237,15 +267,22 @@ describe('Horoscope UI 404 Error', () => {
   describe('Horoscope UI Loading', () => {
     beforeEach(() => {
         cy.fixture('testHoroscope.json')
+            .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+                statusCode: 200,
+                body: testHoroscope.horoscopeToday
+            })})
+
+        cy.fixture('testHoroscope.json')
         .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=tomorrow', {
             statusCode: 200,
             delay: 100,
-            body: testHoroscope.horoscopeToday
+            body: testHoroscope.horoscopeTomorrow
         })})
   
         cy.visit('http://localhost:3000');
         cy.get('.all-star-signs').first()
             .click()
+        cy.get('.tomorrow').click()
       });
   
       it('Should have a loading message while retrieving the Horoscope information for tomorrow', () => {

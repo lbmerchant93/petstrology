@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Horoscope.css';
 
 const Horoscope = (props) => {
     const { day, isLoading, errorMsg, horoscope, image, sign } = props.horoscope;
-    
+
     return (
         <main className="horoscope-main">
             {errorMsg && <p className='error-message'>{errorMsg}</p>}
@@ -57,5 +58,13 @@ const Horoscope = (props) => {
     )
 }
 
-
 export default Horoscope; 
+
+Horoscope.propTypes = {
+    day: PropTypes.string,
+    isLoading: PropTypes.bool, 
+    errorMsg: PropTypes.string, 
+    horoscope: PropTypes.object, 
+    image: PropTypes.string, 
+    sign: PropTypes.string
+}
