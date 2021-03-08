@@ -37,4 +37,14 @@ describe('Dashboard UI', () => {
         cy.get('.all-star-signs').eq(0).contains('CAPRICORN')
         cy.get('.sign-img').eq(0).should('have.attr', 'alt', 'capricorn')
     })
+
+    it('Should have a link to the About page', () => {
+        cy.get('.footer-link').eq(0).click();
+        cy.url().should('equal', 'http://localhost:3000/About')
+    })
+
+    it('Should have a link to the Contact page', () => {
+        cy.get('.footer-link').eq(1).click();
+        cy.url().should('equal', 'http://localhost:3000/Contact')
+    })
 })
