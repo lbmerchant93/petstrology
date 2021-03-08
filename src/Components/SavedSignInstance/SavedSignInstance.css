@@ -12,6 +12,7 @@
     min-width: 160px;
     max-height: 160px;
     max-width: 160px;
+    animation: fadeIn ease 1.5s;
 }
 
 .remove-saved-sign {
@@ -30,4 +31,9 @@
 .who-sign,
 .who-birth-date {
     color: rgb(62,162,217);
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
