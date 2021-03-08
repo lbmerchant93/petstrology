@@ -7,6 +7,7 @@ import FindSign from '../FindSign/FindSign';
 import Horoscope from '../Horoscope/Horoscope';
 import Footer from '../Footer/Footer';
 import About from '../About/About';
+import Contact from '../Contact/Contact';
 import { fetchHoroscope } from '../../apiCalls';
 
 class App extends Component {
@@ -131,7 +132,10 @@ class App extends Component {
             />} 
           />
           <Route path='/About' exact render={() => 
-            <About />} 
+            <About goingToPage={this.goingToPage}/>} 
+          />
+          <Route path='/Contact' exact render={() => 
+            <Contact />} 
           />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>

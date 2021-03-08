@@ -7,7 +7,7 @@ const Footer = ({ goingToPage }) => {
     return (
         <footer>
             <Link to='/About' className='footer-link' onClick={() => goingToPage('away')}>ABOUT </Link>
-            <p>Contact Info</p>
+            <Link to='/Contact' className='footer-link' onClick={() => goingToPage('away')}>CONTACT </Link>
         </footer>
     )
 }
