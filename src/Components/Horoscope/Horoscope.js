@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Horoscope.css';
 
-const Horoscope = (props) => {
-    const { day, isLoading, errorMsg, horoscope, image, sign } = props.horoscope;
+const Horoscope = ({ day, isLoading, errorMsg, horoscope, image, sign, retrieveDifferentDay }) => {
+    // const { day, isLoading, errorMsg, horoscope, image, sign } = props;
 
     return (
         <main className="horoscope-main">
             {errorMsg && <p className='error-message'>{errorMsg}</p>}
             {isLoading && <p className='loading-message'>Loading...</p>}
-            {horoscope  &&   
+            {horoscope.description  &&   
                 <section className="horoscope-content">
                     <img className='horoscope-sign-img' src={image} alt={sign} />
                     <div className='details'>
@@ -48,9 +48,9 @@ const Horoscope = (props) => {
                                      {horoscope.description}
                                 </li>
                             </ul>
-                            {day !== 'yesterday' && <button className='yesterday' onClick={() => props.retrieveDifferentDay('yesterday')}>YESTERDAY</button>}
-                            {day !== 'today' && <button className='today' onClick={() => props.retrieveDifferentDay('today')}>TODAY</button>}
-                            {day !== 'tomorrow' && <button className='tomorrow' onClick={() => props.retrieveDifferentDay('tomorrow')}>TOMORROW</button>} 
+                            {day !== 'yesterday' && <button className='yesterday' onClick={() => retrieveDifferentDay('yesterday')}>YESTERDAY</button>}
+                            {day !== 'today' && <button className='today' onClick={() => retrieveDifferentDay('today')}>TODAY</button>}
+                            {day !== 'tomorrow' && <button className='tomorrow' onClick={() => retrieveDifferentDay('tomorrow')}>TOMORROW</button>} 
                     </div>
                 </section>
             }   
@@ -66,5 +66,6 @@ Horoscope.propTypes = {
     errorMsg: PropTypes.string, 
     horoscope: PropTypes.object, 
     image: PropTypes.string, 
-    sign: PropTypes.string
+    sign: PropTypes.string,
+    retrieveDifferentDay: PropTypes.func
 }
