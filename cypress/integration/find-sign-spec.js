@@ -45,4 +45,17 @@ describe('Dashboard UI', () => {
         cy.get('.saved-instance .birth-date').contains('January 1st')
     })
 
+    it('Should hold more than one saved instance when there are multiple inputs entered', () => {
+        cy.get('.name-input').type('Lucas')
+        cy.get('.date-input').type('2021-01-01')
+        cy.get('.submit').click()
+        cy.get('.name-input').type('Narara')
+        cy.get('.date-input').type('2021-02-01')
+        cy.get('.submit').click()
+        cy.get('.name-input').type('Kai')
+        cy.get('.date-input').type('2021-03-01')
+        cy.get('.submit').click()
+        cy.get('.saved-instance').should('have.length', '3')
+    })
+
 })
