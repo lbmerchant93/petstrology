@@ -23,4 +23,14 @@ describe('Dashboard UI', () => {
         cy.get('.saved-signs').should('not.exist')
     })
 
+    it('Should not be able to submit inputs until both inputs are filled out', () => {
+        cy.get('.disabled').should('have.attr', 'disabled', 'disabled')
+        cy.get('.name-input').type('Lucas')
+        cy.get('.name-input').should('have.attr', 'value', 'Lucas')
+        cy.get('.disabled').should('have.attr', 'disabled', 'disabled')
+        cy.get('.date-input').type('2021-01-01')
+        cy.get('.date-input').should('have.attr', 'value', '2021-01-01')
+        cy.get('.submit').should('not.have.attr', 'disabled')
+    })
+
 })
