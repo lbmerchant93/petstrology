@@ -29,6 +29,12 @@ describe('Dashboard UI', () => {
         cy.url().should('equal', 'http://localhost:3000/')
     })
 
+    it('Should have a link to Find Your Sign in the header', () => {
+        cy.get('header .saved-signs-link')
+            .click()
+        cy.url().should('equal', 'http://localhost:3000/FindYourSigns')
+    })
+
     it('Should have an image and sign title', () => {
         cy.get('img').should('have.attr', 'alt', 'capricorn')
         cy.get('.horoscope-sign-title').contains('CAPRICORN')
