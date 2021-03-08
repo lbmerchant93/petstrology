@@ -102,7 +102,7 @@ class App extends Component {
   }
 
   render() {
-    const { atHome, atFindSign } = this.state;
+    const { atHome, atFindSign, day, isLoading, errorMsg, horoscope, image, sign } = this.state;
 
     return (
       <div className="App">
@@ -127,7 +127,12 @@ class App extends Component {
           />
           <Route path='/Horoscope/:sign' exact render={() => 
             <Horoscope 
-              horoscope={this.state} 
+              day={day}
+              isLoading={isLoading}
+              errorMsg={errorMsg}
+              horoscope={horoscope}
+              image={image}
+              sign={sign}
               retrieveDifferentDay={this.retrieveDifferentDay}
             />} 
           />
