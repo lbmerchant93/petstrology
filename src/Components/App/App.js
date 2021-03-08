@@ -6,6 +6,7 @@ import Home from '../Home/Home';
 import FindSign from '../FindSign/FindSign';
 import Horoscope from '../Horoscope/Horoscope';
 import Footer from '../Footer/Footer';
+import About from '../About/About';
 import { fetchHoroscope } from '../../apiCalls';
 
 class App extends Component {
@@ -128,6 +129,9 @@ class App extends Component {
               horoscope={this.state} 
               retrieveDifferentDay={this.retrieveDifferentDay}
             />} 
+          />
+          <Route path='/About' exact render={() => 
+            <About />} 
           />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>

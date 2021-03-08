@@ -1,0 +1,9 @@
+footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
