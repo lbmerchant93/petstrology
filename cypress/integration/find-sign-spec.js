@@ -11,6 +11,16 @@ describe('Dashboard UI', () => {
             .click()
     })
 
+    it('Should have a way to get back to all signs', () => {
+        cy.get('header .home-link')
+            .click()
+        cy.url().should('equal', 'http://localhost:3000/')
+    })
+
+    it('Shouldn\'t have a link to Find Your Signs when on that page', () => {
+        cy.get('header .saved-signs-link').should('not.exist')
+    })
+
     it('Should have section to Find Your Sign containing inputs you can enter a name and date', () => {
         cy.get('.find-title').contains('FIND YOUR SIGN')
         cy.get('.name-input').type('Lucas')

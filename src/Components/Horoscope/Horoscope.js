@@ -14,7 +14,7 @@ const Horoscope = (props) => {
                     <img className='horoscope-sign-img' src={image} alt={sign} />
                     <div className='details'>
                         <h2 className='horoscope-sign-title'>{sign.toUpperCase()}</h2>
-                            <ul>
+                            <ul className='details-list'>
                                 <li className='days-date'>
                                     <h3>Current Date:</h3>
                                     {horoscope.current_date}

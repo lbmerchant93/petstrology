@@ -18,3 +18,14 @@ header {
     background: none;
     color: white;
 }
+
+@media screen and (max-width: 580px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-link {
+        margin-bottom: 15px;
+    }
+}

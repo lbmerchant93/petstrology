@@ -15,3 +15,13 @@ input {
     cursor: pointer;
 }
 
+@media screen and (max-width: 450px) {
+    form {
+        flex-direction: column;
+    }
+
+    input {
+        margin: 0 0 10px 0;
+        width: 100%;
+    }
+}
