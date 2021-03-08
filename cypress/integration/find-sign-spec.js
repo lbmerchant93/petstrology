@@ -58,4 +58,19 @@ describe('Dashboard UI', () => {
         cy.get('.saved-instance').should('have.length', '3')
     })
 
+    it('Should be able to remove an instance when the remove button is clicked', () => {
+        cy.get('.name-input').type('Lucas')
+        cy.get('.date-input').type('2021-01-01')
+        cy.get('.submit').click()
+        cy.get('.name-input').type('Narara')
+        cy.get('.date-input').type('2021-02-01')
+        cy.get('.submit').click()
+        cy.get('.saved-instance').should('have.length', '2')
+        cy.get('.saved-instance').eq(0).contains('Lucas')
+        cy.get('.saved-instance').eq(1).contains('Narara')
+        cy.get('.saved-instance .remove-saved-sign').eq(0).click()
+        cy.get('.saved-instance').should('have.length', '1')
+        cy.get('.saved-instance').eq(0).contains('Narara')
+    })
+
 })
