@@ -1,0 +1,31 @@
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn ease 1.5s;
+}
+
+.contact-title {
+    color: rgb(148,84,110);
+}
+
+.github-profile-pic {
+    width: 250px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.github-profile-link,
+.linkedin-profile-link {
+    color: rgb(62,162,217);
+    margin-bottom: 10px;
+}
+
+.my-sign {
+    color: rgb(62,162,217);
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}

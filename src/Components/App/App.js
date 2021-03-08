@@ -6,6 +6,8 @@ import Home from '../Home/Home';
 import FindSign from '../FindSign/FindSign';
 import Horoscope from '../Horoscope/Horoscope';
 import Footer from '../Footer/Footer';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
 import { fetchHoroscope } from '../../apiCalls';
 
 class App extends Component {
@@ -26,7 +28,7 @@ class App extends Component {
 
   retrieveHoroscopeData = async (url, src, alt, when) => {
     this.resetState()
-    this.goingToPage('atHoroscope')
+    this.goingToPage('away')
     await fetchHoroscope(url)
     .then(result => {
         this.setState({ isLoading: true, horoscope: '' })
@@ -82,7 +84,7 @@ class App extends Component {
         atHome: false,
         atFindSign: true
       })
-    } else if (page === 'atHoroscope') {
+    } else if (page === 'away') {
       this.setState({
         atHome: false,
         atFindSign: false
@@ -129,9 +131,17 @@ class App extends Component {
               retrieveDifferentDay={this.retrieveDifferentDay}
             />} 
           />
+          <Route path='/About' exact render={() => 
+            <About goingToPage={this.goingToPage}/>} 
+          />
+          <Route path='/Contact' exact render={() => 
+            <Contact />} 
+          />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>
-        <Footer />
+        <Footer 
+          goingToPage={this.goingToPage}
+        />
       </div>
     )
   }

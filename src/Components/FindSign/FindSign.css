@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    animation: fadeIn ease 1.5s;
 }
 
 .none-saved,
@@ -31,4 +32,9 @@ h4 {
 .find-title,
 .saved-search-title {
     color: rgb(45, 181, 158);
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
