@@ -1,16 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Sign from '../Sign/Sign';
 import './Home.css';
 import signImages from '../../utils/signImages';
 
-const Home = (props) => {
+const Home = ({ retrieveHoroscopeData }) => {
     
     const signComponents = signImages.map((image, index) => {
         return (
             <Sign 
                 key={index} 
                 image={image} 
-                retrieveHoroscopeData={props.retrieveHoroscopeData}
+                retrieveHoroscopeData={retrieveHoroscopeData}
             />
         )
     })
@@ -23,3 +24,7 @@ const Home = (props) => {
 }
 
 export default Home; 
+
+Home.propTypes = {
+    retrieveHoroscopeData: PropTypes.func
+}

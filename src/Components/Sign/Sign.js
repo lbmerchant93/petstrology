@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import './Sign.css';
 
@@ -24,3 +25,9 @@ const Sign = (props) => {
 }
 
 export default Sign;
+
+Sign.propTypes = {
+    src: PropTypes.string,
+    alt: PropTypes.string,
+    retrieveHoroscopeData: PropTypes.func
+}

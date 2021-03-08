@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Form.css';
 import compareDates from '../../utils/compareDates';
 
@@ -60,3 +61,8 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+    addBirthDate: PropTypes.func,
+    
+}
