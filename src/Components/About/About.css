@@ -1,0 +1,46 @@
+.about-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.about-title {
+    color: rgb(148,84,110);
+}
+
+.why-article,
+.getting-started-article,
+.horoscope-article {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+    border: solid 1px rgb(64,38,234);
+    border-radius: 10px;
+    background-color: rgba(0,0,0, 0.8);
+    background-blend-mode: darken;
+}
+
+.why,
+.start,
+.reading-horoscope {
+    margin: 5px;
+}
+
+.why-made,
+.getting-started,
+.how-to-read-horoscope {
+    padding: 5px;
+}
+
+.all-link,
+.find-link {
+    color: rgb(62,162,217);
+}

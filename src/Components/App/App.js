@@ -27,7 +27,7 @@ class App extends Component {
 
   retrieveHoroscopeData = async (url, src, alt, when) => {
     this.resetState()
-    this.goingToPage('atHoroscope')
+    this.goingToPage('away')
     await fetchHoroscope(url)
     .then(result => {
         this.setState({ isLoading: true, horoscope: '' })
@@ -83,7 +83,7 @@ class App extends Component {
         atHome: false,
         atFindSign: true
       })
-    } else if (page === 'atHoroscope') {
+    } else if (page === 'away') {
       this.setState({
         atHome: false,
         atFindSign: false
@@ -135,7 +135,9 @@ class App extends Component {
           />
           <Route path='/' render={() => <main>404</main>} />
         </Switch>
-        <Footer />
+        <Footer 
+          goingToPage={this.goingToPage}
+        />
       </div>
     )
   }
