@@ -9,7 +9,7 @@ const Horoscope = ({ day, isLoading, errorMsg, horoscope, image, sign, retrieveD
         <main className="horoscope-main">
             {errorMsg && <p className='error-message'>{errorMsg}</p>}
             {isLoading && <p className='loading-message'>Loading...</p>}
-            {horoscope  &&   
+            {horoscope.description  &&   
                 <section className="horoscope-content">
                     <img className='horoscope-sign-img' src={image} alt={sign} />
                     <div className='details'>
@@ -64,7 +64,7 @@ Horoscope.propTypes = {
     day: PropTypes.string,
     isLoading: PropTypes.bool, 
     errorMsg: PropTypes.string, 
-    horoscope: PropTypes.any, 
+    horoscope: PropTypes.object, 
     image: PropTypes.string, 
     sign: PropTypes.string,
     retrieveDifferentDay: PropTypes.func

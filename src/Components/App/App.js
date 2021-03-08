@@ -18,7 +18,7 @@ class App extends Component {
       errorMsg: '',
       day: '',
       sign: '',
-      horoscope: '',
+      horoscope: {},
       image: '',
       savedDates: [],
       atHome: true,
@@ -31,7 +31,7 @@ class App extends Component {
     this.goingToPage('away')
     await fetchHoroscope(url)
     .then(result => {
-        this.setState({ isLoading: true, horoscope: '' })
+        this.setState({ isLoading: true, horoscope: {} })
         if (typeof result === 'string') {
             setTimeout(() => {
                 this.setState({
@@ -66,7 +66,7 @@ class App extends Component {
       errorMsg: '',
       day: 'today',
       sign: '',
-      horoscope: '',
+      horoscope: {},
       image: '',
       atHome: false,
       atFindSign: false
