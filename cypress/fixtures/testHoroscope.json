@@ -1,0 +1,32 @@
+{
+    "horoscopeToday": {
+        "color":"Blue",
+        "compatibility":"Taurus",
+        "current_date":"March 1, 2021",
+        "date_range":"Jan 20 - Feb 18",
+        "description":"Your busy lifestyle has been fun, but today it's time to slow down and just relax.",
+        "lucky_number":"93",
+        "lucky_time":"6pm",
+        "mood":"Relieved"
+    },
+    "horoscopeYesterday": {
+        "color":"Black",
+        "compatibility":"Aquarius",
+        "current_date":"February 28, 2021",
+        "date_range":"Jan 20 - Feb 18",
+        "description":"All of your hard work is starting to show. Take some time to enjoy the fruits of your labor.",
+        "lucky_number":"25",
+        "lucky_time":"2pm",
+        "mood":"Excited"
+    },
+    "horoscopeTomorrow": {
+        "color":"Green",
+        "compatibility":"Gemini",
+        "current_date":"March 2, 2021",
+        "date_range":"Jan 20 - Feb 18",
+        "description":"Take today to enjoy a slower pace. Others may seem to be getting ahead of you but you should lay low today.",
+        "lucky_number":"7",
+        "lucky_time":"9am",
+        "mood":"Sluggish"
+    }
+}

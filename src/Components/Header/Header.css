@@ -12,13 +12,9 @@ header {
     margin: 0;
 }
 
-.saved-signs-btn,
-.home-btn {
+.saved-signs-link,
+.home-link {
     border: none; 
     background: none;
     color: white;
 }
-
-/* .saved-signs-btn:hover {
-    cursor: pointer;
-} */

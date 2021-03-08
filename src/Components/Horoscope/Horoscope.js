@@ -2,15 +2,15 @@ import React from 'react';
 import './Horoscope.css';
 
 const Horoscope = (props) => {
-    const { day, isLoading, errorMsg, horoscope, image, alt, sign } = props.horoscope;
-
+    const { day, isLoading, errorMsg, horoscope, image, sign } = props.horoscope;
+    
     return (
         <main className="horoscope-main">
             {errorMsg && <p className='error-message'>{errorMsg}</p>}
             {isLoading && <p className='loading-message'>Loading...</p>}
             {horoscope  &&   
                 <section className="horoscope-content">
-                    <img className='horoscope-sign-img' src={image} alt={alt} />
+                    <img className='horoscope-sign-img' src={image} alt={sign} />
                     <div className='details'>
                         <h2 className='horoscope-sign-title'>{sign.toUpperCase()}</h2>
                             <ul>
