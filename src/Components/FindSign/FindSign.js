@@ -27,7 +27,7 @@ const FindSign = ({ savedDates, removeBirthDate, retrieveHoroscopeData, addBirth
             <h3 className='saved-search-title'>YOUR SEARCHED SIGNS</h3>
             {!savedDates.length && 
             <div className='none-saved'>
-                <h3>No dates saved yet! Fill out the form above to save your loved one's dates! </h3>
+                <h3 className='none-msg'>No dates saved yet! Fill out the form above to save your loved one's dates! </h3>
             </div>}
             {savedDates.length !== 0 && 
             <article className='saved-signs'>

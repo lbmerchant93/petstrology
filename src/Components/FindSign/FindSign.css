@@ -11,6 +11,10 @@
     margin-top: 20px;
 }
 
+.none-msg {
+    text-align: center;
+}
+
 .saved-signs {
     display: flex;
     flex-direction: row;
@@ -23,10 +27,6 @@
 
 .saved-search-title {
     margin-top: 20px;
-}
-
-h4 {
-    margin: 0;
 }
 
 .find-title,

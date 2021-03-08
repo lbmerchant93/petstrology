@@ -49,3 +49,15 @@
     0% {opacity:0;}
     100% {opacity:1;}
 }
+
+@media screen and (max-width: 810px) {
+    .about-info {
+        flex-direction: column;
+    }
+
+    .why-article,
+    .getting-started-article,
+    .horoscope-article {
+        width: 100%;
+    }
+}
