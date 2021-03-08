@@ -102,7 +102,7 @@ describe('Dashboard UI', () => {
 
 })
 
-describe('Dashboard UI 404 Error', () => {
+describe('Horoscope UI 404 Error', () => {
     beforeEach(() => {
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
           statusCode: 404
@@ -112,12 +112,12 @@ describe('Dashboard UI 404 Error', () => {
             .click()
     });
   
-    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+    it('Should display the error number and a message when something goes wrong with the api call for today', () => {
       cy.get('main').contains("404 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
     })
  });
 
- describe('Dashboard UI 404 Error', () => {
+ describe('Horoscope UI 404 Error', () => {
     beforeEach(() => {
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=yesterday', {
           statusCode: 404
@@ -128,12 +128,12 @@ describe('Dashboard UI 404 Error', () => {
         cy.get('.yesterday').click()
     });
   
-    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+    it('Should display the error number and a message when something goes wrong with the api call for yesterday', () => {
       cy.get('main').contains("404 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
     })
  });
 
- describe('Dashboard UI 404 Error', () => {
+ describe('Horoscope UI 404 Error', () => {
     beforeEach(() => {
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=tomorrow', {
           statusCode: 404
@@ -144,12 +144,12 @@ describe('Dashboard UI 404 Error', () => {
         cy.get('.tomorrow').click()
     });
   
-    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+    it('Should display the error number and a message when something goes wrong with the api call for tomorrow', () => {
       cy.get('main').contains("404 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
     })
  });
 
- describe('Dashboard UI 500 Error', () => {
+ describe('Horoscope UI 500 Error', () => {
     beforeEach(() => {
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
           statusCode: 500
@@ -159,12 +159,12 @@ describe('Dashboard UI 404 Error', () => {
             .click()
     });
   
-    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+    it('Should display the error number and a message when something goes wrong with the api call for today', () => {
       cy.get('main').contains("500 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
     })
  });
 
- describe('Dashboard UI 500 Error', () => {
+ describe('Horoscope UI 500 Error', () => {
     beforeEach(() => {
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=yesterday', {
           statusCode: 500
@@ -175,12 +175,12 @@ describe('Dashboard UI 404 Error', () => {
         cy.get('.yesterday').click()
     });
   
-    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+    it('Should display the error number and a message when something goes wrong with the api call for yesterday', () => {
       cy.get('main').contains("500 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
     })
  });
 
- describe('Dashboard UI 500 Error', () => {
+ describe('Horoscope UI 500 Error', () => {
     beforeEach(() => {
         cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=tomorrow', {
           statusCode: 500
@@ -191,7 +191,64 @@ describe('Dashboard UI 404 Error', () => {
         cy.get('.tomorrow').click()
     });
   
-    it('Should display the error number and a message when something goes wrong with the api call to retrieve all of the movies is not ok', () => {
+    it('Should display the error number and a message when something goes wrong with the api call for tomorrow', () => {
       cy.get('main').contains("500 error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!")
     })
  });
+
+ describe('Horoscope UI Loading', () => {
+    beforeEach(() => {
+        cy.fixture('testHoroscope.json')
+        .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=today', {
+            statusCode: 200,
+            delay: 100,
+            body: testHoroscope.horoscopeToday
+        })})
+  
+        cy.visit('http://localhost:3000');
+        cy.get('.all-star-signs').first()
+            .click()
+      });
+  
+      it('Should have a loading message while retrieving the Horoscope information for today', () => {
+        cy.get('.loading-message').contains('Loading...')
+      });
+  });
+
+  describe('Horoscope UI Loading', () => {
+    beforeEach(() => {
+        cy.fixture('testHoroscope.json')
+        .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=yesterday', {
+            statusCode: 200,
+            delay: 100,
+            body: testHoroscope.horoscopeToday
+        })})
+  
+        cy.visit('http://localhost:3000');
+        cy.get('.all-star-signs').first()
+            .click()
+      });
+  
+      it('Should have a loading message while retrieving the Horoscope information for yesterday', () => {
+        cy.get('.loading-message').contains('Loading...')
+      });
+  });
+
+  describe('Horoscope UI Loading', () => {
+    beforeEach(() => {
+        cy.fixture('testHoroscope.json')
+        .then((testHoroscope) => {cy.intercept('POST', 'https://aztro.sameerkumar.website/?sign=capricorn&day=tomorrow', {
+            statusCode: 200,
+            delay: 100,
+            body: testHoroscope.horoscopeToday
+        })})
+  
+        cy.visit('http://localhost:3000');
+        cy.get('.all-star-signs').first()
+            .click()
+      });
+  
+      it('Should have a loading message while retrieving the Horoscope information for tomorrow', () => {
+        cy.get('.loading-message').contains('Loading...')
+      });
+  });
