@@ -8,6 +8,8 @@ body {
   background-image: url('./images/vector.jpeg');
   background-position: center;
   background-size: 500px 500px;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 code {
