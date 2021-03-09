@@ -8,7 +8,7 @@ const Horoscope = ({ day, isLoading, errorMsg, horoscope, image, sign, retrieveD
     return (
         <main className="horoscope-main">
             {errorMsg && <p className='error-message'>{errorMsg}</p>}
-            {isLoading && <p className='loading-message'>Loading...If loading persists, try going Back To All Signs and try again.</p>}
+            {isLoading && <p className='loading-message'>Loading...If loading persists, try going clicking Back To All Signs above and try again.</p>}
             {horoscope.description  &&   
                 <section className="horoscope-content">
                     <img className='horoscope-sign-img' src={image} alt={sign} />

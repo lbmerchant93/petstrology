@@ -9,7 +9,7 @@ describe('Dashboard UI', () => {
     })
 
     it('Should have an image for the developer', () => {
-        cy.get('img').should('have.attr', 'alt', 'Lucas Github Picture')
+        cy.get('img').should('have.attr', 'alt', 'Lucas Github')
     })
 
     it('Should have a link to Lucas\' github profile', () => {
