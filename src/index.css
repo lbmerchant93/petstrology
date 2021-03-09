@@ -8,8 +8,6 @@ body {
   background-image: url('./images/vector.jpeg');
   background-position: center;
   background-size: 500px 500px;
-  /* background-color: rgba(46,8,0, 0.9);
-  background-blend-mode: darken; */
 }
 
 code {
