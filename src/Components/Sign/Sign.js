@@ -9,9 +9,7 @@ const Sign = (props) => {
     
     return (
         <Link 
-            to={{
-                pathname: `/Horoscope/${alt}`
-            }} 
+            to={{ pathname: `/Horoscope/${alt}` }} 
             className='sign-link'
             onClick={() => props.retrieveHoroscopeData(`https://aztro.sameerkumar.website/?sign=${alt}&day=today`, src, alt)}
         >

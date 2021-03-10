@@ -26,32 +26,30 @@ class App extends Component {
     }
   }
 
-  retrieveHoroscopeData = async (url, src, alt, when) => {
+  retrieveHoroscopeData = (url, src, alt, when) => {
     this.resetState()
-    this.goingToPage('away')
-    await fetchHoroscope(url)
+    fetchHoroscope(url)
     .then(result => {
-        this.setState({ isLoading: true, horoscope: {} })
         if (typeof result === 'string') {
-            setTimeout(() => {
-                this.setState({
-                    isLoading: false,
-                    errorMsg: result,
-                    atHome: false
-                })
-            }, 600)
-          } else {
-            setTimeout(() => {
-                this.setState({
-                    day: when || 'today',
-                    image: src,
-                    sign: alt, 
-                    horoscope: result,
-                    isLoading: false,
-                    atHome: false
-                })
-            }, 600)   
-          }
+          setTimeout(() => {
+              this.setState({
+                  isLoading: false,
+                  errorMsg: result,
+                  atHome: false
+              })
+          }, 600)
+        } else {
+          setTimeout(() => {
+              this.setState({
+                  day: when || 'today',
+                  image: src,
+                  sign: alt, 
+                  horoscope: result,
+                  isLoading: false,
+                  atHome: false
+              })
+          }, 600)   
+        }
     })
   }
 

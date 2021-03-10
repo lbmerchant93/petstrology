@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import './Horoscope.css';
 
 const Horoscope = ({ day, isLoading, errorMsg, horoscope, image, sign, retrieveDifferentDay }) => {
-    // const { day, isLoading, errorMsg, horoscope, image, sign } = props;
 
     return (
         <main className="horoscope-main">
             {errorMsg && <p className='error-message'>{errorMsg}</p>}
-            {isLoading && <p className='loading-message'>Loading...If loading persists, try going clicking Back To All Signs above and try again.</p>}
+            {isLoading && <p className='loading-message'>Loading...<br/> If loading persists, try going clicking Back To All Signs above and try again.</p>}
             {horoscope.description  &&   
                 <section className="horoscope-content">
                     <img className='horoscope-sign-img' src={image} alt={sign} />
@@ -48,9 +47,27 @@ const Horoscope = ({ day, isLoading, errorMsg, horoscope, image, sign, retrieveD
                                      {horoscope.description}
                                 </li>
                             </ul>
-                            {day !== 'yesterday' && <button className='yesterday' onClick={() => retrieveDifferentDay('yesterday')}>YESTERDAY</button>}
-                            {day !== 'today' && <button className='today' onClick={() => retrieveDifferentDay('today')}>TODAY</button>}
-                            {day !== 'tomorrow' && <button className='tomorrow' onClick={() => retrieveDifferentDay('tomorrow')}>TOMORROW</button>} 
+                            {day !== 'yesterday' && 
+                                <button 
+                                    className='yesterday' 
+                                    onClick={() => retrieveDifferentDay('yesterday')}
+                                >
+                                     YESTERDAY
+                                </button>}
+                            {day !== 'today' && 
+                                <button 
+                                    className='today' 
+                                    onClick={() => retrieveDifferentDay('today')}
+                                >
+                                    TODAY
+                                </button>}
+                            {day !== 'tomorrow' && 
+                                <button 
+                                    className='tomorrow' 
+                                    onClick={() => retrieveDifferentDay('tomorrow')}
+                                >
+                                    TOMORROW
+                                </button>} 
                     </div>
                 </section>
             }   

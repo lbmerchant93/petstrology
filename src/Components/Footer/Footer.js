@@ -6,8 +6,20 @@ import './Footer.css';
 const Footer = ({ goingToPage }) => {
     return (
         <footer>
-            <Link to='/About' className='footer-link' onClick={() => goingToPage('away')}>ABOUT </Link>
-            <Link to='/Contact' className='footer-link' onClick={() => goingToPage('away')}>CONTACT </Link>
+            <Link 
+                to='/About' 
+                className='footer-link' 
+                onClick={() => goingToPage('away')}
+            >
+                ABOUT
+            </Link>
+            <Link 
+                to='/Contact' 
+                className='footer-link' 
+                onClick={() => goingToPage('away')}
+            >
+                CONTACT
+            </Link>
         </footer>
     )
 }
