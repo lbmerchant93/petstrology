@@ -1,4 +1,4 @@
-# Petstrology
+# Petstrology [![Build Status](https://travis-ci.org/lbmerchant93/petstrology.svg?branch=main)](https://travis-ci.org/lbmerchant93/petstrology)
 #### Turing School of Software Design - Mod3 Final Solo Project
 The details of this project are outlined in [this project spec](https://frontend.turing.io/projects/module-3/niche-audience.html). This project was designed to demonstrate an understanding of React and Cypress after spending the last 5 weeks diving deeply into using them.
 
