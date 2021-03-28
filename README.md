@@ -24,7 +24,7 @@ The details of this project are outlined in [this project spec](https://frontend
 4. [Challenges & Wins](#challenges-&-wins)
 
 ## Introduction
-This project is the developer's final solo project in Module 3 of the Front-End Engineering program at Denver's Turing School of Software and Design. The idea behind this project is to demonstrate an understanding of React and Cypress after spending the last 5 weeks diving deeply into using them. Students were given creative freedom on design and theme, though the theme had to center around a niche audience. The target audience for this application was chosen to be users that want to use astrology as a way to understand their pets.
+This project is the developer's final solo project in Module 3 of the Front-End Engineering program at Denver's Turing School of Software and Design. The idea behind this project is to demonstrate an understanding of React and Cypress after spending the last 5 weeks diving deeply into using them. Students were given creative freedom on design and theme, though the theme had to center around a niche audience. The target audience for this application was chosen to be users that want to use astrology as a way to understand their pets. Information retrieved from the aztro API.
 
 ## Setup Instructions
 To run the project locally:
