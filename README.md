@@ -95,7 +95,7 @@ In addition to all the functionality above, the application was made completely 
 
 ### Future Features
 - **One:** Create favoriting a horoscope functionality so that you can save it and read it again later. Create a drop down navigation for routing to all sign, finding a sign, and then a profile style page. This profile will hold the searched signs and also the saved horoscopes that you favorite.
-- **Two:** Create functionality so that you can select your sign, so that when you view your's or your pet's horoscope it tells you on the page if you are compatible that day.
+- **Two:** Create functionality so that when you view your's or your pet's horoscope it tells you on the page if you are compatible that day.
 - **Three:** Add routes for each sign's date. Use those params as a way to make fetch calls if a user were to reload the page while viewing a horoscope.
 
 
